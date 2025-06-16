@@ -387,6 +387,8 @@ public:
 
         // the k_param_* space is 9-bits in size
         // 511: reserved
+        k_param_band_ch = 270,
+        k_param_channel_ch,
     };
 
     AP_Int16        format_version;
@@ -441,6 +443,9 @@ public:
     AP_Int8         simple_modes;
     AP_Int8         flight_mode_chan;
     AP_Int8         initial_mode;
+
+    AP_Int8         band_ch;
+    AP_Int8         channel_ch;
 
     // Misc
     //

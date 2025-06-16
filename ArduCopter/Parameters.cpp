@@ -354,6 +354,20 @@ const AP_Param::Info Copter::var_info[] = {
     GSCALAR(poshold_brake_angle_max, "PHLD_BRAKE_ANGLE",  POSHOLD_BRAKE_ANGLE_DEFAULT),
 #endif
 
+    // @Param: VTX_CONTROL_BAND
+    // @DisplayName: VTX Control Band RC
+    // @Description: Specify channel for switching VTX band
+    // @Range: 0 16
+    // @RebootRequired: False
+    GSCALAR(band_ch, "VTX_CONTROL_BAND", 0),
+
+    // @Param: VTX_CONTROL_CHAN
+    // @DisplayName: VTX Control Channel RC
+    // @Description: Specify channel for switching VTX band
+    // @Range: 0 16
+    // @RebootRequired: False
+    GSCALAR(channel_ch, "VTX_CONTROL_CHAN", 0),
+
     // @Param: LAND_REPOSITION
     // @DisplayName: Land repositioning
     // @Description: Enables user input during LAND mode, the landing phase of RTL, and auto mode landings.
