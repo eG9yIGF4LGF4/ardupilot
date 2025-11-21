@@ -53,7 +53,7 @@ void setup(void)
     if (!AP::compass().read()) {
         hal.console->printf("No compass detected\n");
     }
-    AP::gps().init(serial_manager);
+    // AP::gps().init(serial_manager);
 }
 
 void loop(void)

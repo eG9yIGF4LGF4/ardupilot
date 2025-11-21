@@ -71,7 +71,7 @@ void Blimp::init_ardupilot()
 
     // Do GPS init
     gps.set_log_gps_bit(MASK_LOG_GPS);
-    gps.init(serial_manager);
+    // gps.init(serial_manager);
 
     AP::compass().set_log_bit(MASK_LOG_COMPASS);
     AP::compass().init();

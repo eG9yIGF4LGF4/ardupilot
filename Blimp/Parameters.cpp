@@ -64,7 +64,7 @@ const AP_Param::Info Blimp::var_info[] = {
 
     // @Group: SERIAL
     // @Path: ../libraries/AP_SerialManager/AP_SerialManager.cpp
-    GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
+    // GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
 
     // @Param: TELEM_DELAY
     // @DisplayName: Telemetry startup delay

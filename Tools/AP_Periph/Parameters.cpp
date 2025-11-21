@@ -470,7 +470,7 @@ const AP_Param::Info AP_Periph_FW::var_info[] = {
 #if HAL_GCS_ENABLED || defined(HAL_PERIPH_SHOW_SERIAL_MANAGER_PARAMS)
     // @Group: SERIAL
     // @Path: ../libraries/AP_SerialManager/AP_SerialManager.cpp
-    GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
+    // GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
 #endif
 
 #if AP_SCRIPTING_ENABLED

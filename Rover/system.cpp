@@ -42,7 +42,7 @@ void Rover::init_ardupilot()
 
     rssi.init();
 
-    g2.windvane.init(serial_manager);
+    // g2.windvane.init(serial_manager);
 
     // init baro before we start the GCS, so that the CLI baro test works
     barometer.init();
@@ -86,7 +86,7 @@ void Rover::init_ardupilot()
 
     // Do GPS init
     gps.set_log_gps_bit(MASK_LOG_GPS);
-    gps.init(serial_manager);
+    // gps.init(serial_manager);
 
     ins.set_log_raw_bit(MASK_LOG_IMU_RAW);
 

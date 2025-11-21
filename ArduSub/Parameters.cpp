@@ -63,7 +63,7 @@ const AP_Param::Info Sub::var_info[] = {
 
     // @Group: SERIAL
     // @Path: ../libraries/AP_SerialManager/AP_SerialManager.cpp
-    GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
+    // GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
 
     // @Param: GCS_PID_MASK
     // @DisplayName: GCS PID tuning mask

@@ -311,7 +311,7 @@ const AP_Param::Info Tracker::var_info[] = {
     
     // @Group: SERIAL
     // @Path: ../libraries/AP_SerialManager/AP_SerialManager.cpp
-    GOBJECT(serial_manager,    "SERIAL",   AP_SerialManager),
+    // GOBJECT(serial_manager,    "SERIAL",   AP_SerialManager),
 
     // @Param: PITCH2SRV_P
     // @DisplayName: Pitch axis controller P gain

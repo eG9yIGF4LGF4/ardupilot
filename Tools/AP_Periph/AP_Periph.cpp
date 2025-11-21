@@ -151,7 +151,7 @@ void AP_Periph_FW::init()
         #define MASK_LOG_GPS (1<<2)
         gps.set_log_gps_bit(MASK_LOG_GPS);
 #endif
-        gps.init(serial_manager);
+        // gps.init(serial_manager);
     }
 #endif
 

@@ -422,8 +422,8 @@ private:
     void userhook_SuperSlowLoop();
     void update_home_from_EKF();
     void set_home_to_current_location_inflight();
-    bool set_home_to_current_location(bool lock);
-    bool set_home(const Location& loc, bool lock);
+    bool set_home_to_current_location(bool lock) override;
+    bool set_home(const Location& loc, bool lock) override;
     bool far_from_EKF_origin(const Location& loc);
     void exit_mission();
     bool verify_loiter_unlimited();
