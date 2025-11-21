@@ -108,7 +108,7 @@ void Rover::init_ardupilot()
 #endif      // AP_OPTICALFLOW_ENABLED
 
 #if AP_RELAY_ENABLED
-    relay.init();
+    // relay.init();
 #endif
 
 #if HAL_MOUNT_ENABLED

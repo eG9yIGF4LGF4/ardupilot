@@ -60,7 +60,7 @@ void Blimp::init_ardupilot()
     ap.initialised_params = true;
 
 #if AP_RELAY_ENABLED
-    relay.init();
+    // relay.init();
 #endif
 
     /*

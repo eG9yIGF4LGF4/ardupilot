@@ -369,72 +369,72 @@ void Sub::handle_jsbutton_press(uint8_t _button, bool shift, bool held)
             controls_reset_since_input_hold = !input_hold_engaged;
         }
         break;
-#if AP_RELAY_ENABLED
-    case JSButton::button_function_t::k_relay_1_on:
-        relay.on(0);
-        break;
-    case JSButton::button_function_t::k_relay_1_off:
-        relay.off(0);
-        break;
-    case JSButton::button_function_t::k_relay_1_toggle:
-        if (!held) {
-            relay.toggle(0);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_1_momentary:
-        if (!held) {
-            relay.on(0);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_2_on:
-        relay.on(1);
-        break;
-    case JSButton::button_function_t::k_relay_2_off:
-        relay.off(1);
-        break;
-    case JSButton::button_function_t::k_relay_2_toggle:
-        if (!held) {
-            relay.toggle(1);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_2_momentary:
-        if (!held) {
-            relay.on(1);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_3_on:
-        relay.on(2);
-        break;
-    case JSButton::button_function_t::k_relay_3_off:
-        relay.off(2);
-        break;
-    case JSButton::button_function_t::k_relay_3_toggle:
-        if (!held) {
-            relay.toggle(2);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_3_momentary:
-        if (!held) {
-            relay.on(2);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_4_on:
-        relay.on(3);
-        break;
-    case JSButton::button_function_t::k_relay_4_off:
-        relay.off(3);
-        break;
-    case JSButton::button_function_t::k_relay_4_toggle:
-        if (!held) {
-            relay.toggle(3);
-        }
-        break;
-    case JSButton::button_function_t::k_relay_4_momentary:
-        if (!held) {
-            relay.on(3);
-        }
-        break;
-#endif
+// #if AP_RELAY_ENABLED
+//     case JSButton::button_function_t::k_relay_1_on:
+//         relay.on(0);
+//         break;
+//     case JSButton::button_function_t::k_relay_1_off:
+//         relay.off(0);
+//         break;
+//     case JSButton::button_function_t::k_relay_1_toggle:
+//         if (!held) {
+//             relay.toggle(0);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_1_momentary:
+//         if (!held) {
+//             relay.on(0);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_2_on:
+//         relay.on(1);
+//         break;
+//     case JSButton::button_function_t::k_relay_2_off:
+//         relay.off(1);
+//         break;
+//     case JSButton::button_function_t::k_relay_2_toggle:
+//         if (!held) {
+//             relay.toggle(1);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_2_momentary:
+//         if (!held) {
+//             relay.on(1);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_3_on:
+//         relay.on(2);
+//         break;
+//     case JSButton::button_function_t::k_relay_3_off:
+//         relay.off(2);
+//         break;
+//     case JSButton::button_function_t::k_relay_3_toggle:
+//         if (!held) {
+//             relay.toggle(2);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_3_momentary:
+//         if (!held) {
+//             relay.on(2);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_4_on:
+//         relay.on(3);
+//         break;
+//     case JSButton::button_function_t::k_relay_4_off:
+//         relay.off(3);
+//         break;
+//     case JSButton::button_function_t::k_relay_4_toggle:
+//         if (!held) {
+//             relay.toggle(3);
+//         }
+//         break;
+//     case JSButton::button_function_t::k_relay_4_momentary:
+//         if (!held) {
+//             relay.on(3);
+//         }
+//         break;
+// #endif
 
     ////////////////////////////////////////////////
     // Servo functions
@@ -624,20 +624,20 @@ void Sub::handle_jsbutton_release(uint8_t _button, bool shift) {
 
     // Act based on the function assigned to this button
     switch (get_button(_button)->function(shift)) {
-#if AP_RELAY_ENABLED
-    case JSButton::button_function_t::k_relay_1_momentary:
-        relay.off(0);
-        break;
-    case JSButton::button_function_t::k_relay_2_momentary:
-        relay.off(1);
-        break;
-    case JSButton::button_function_t::k_relay_3_momentary:
-        relay.off(2);
-        break;
-    case JSButton::button_function_t::k_relay_4_momentary:
-        relay.off(3);
-        break;
-#endif
+// #if AP_RELAY_ENABLED
+//     case JSButton::button_function_t::k_relay_1_momentary:
+//         relay.off(0);
+//         break;
+//     case JSButton::button_function_t::k_relay_2_momentary:
+//         relay.off(1);
+//         break;
+//     case JSButton::button_function_t::k_relay_3_momentary:
+//         relay.off(2);
+//         break;
+//     case JSButton::button_function_t::k_relay_4_momentary:
+//         relay.off(3);
+//         break;
+// #endif
 #if AP_SERVORELAYEVENTS_ENABLED
     case JSButton::button_function_t::k_servo_1_min_momentary:
     case JSButton::button_function_t::k_servo_1_max_momentary:

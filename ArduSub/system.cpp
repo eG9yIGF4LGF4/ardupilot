@@ -76,7 +76,7 @@ void Sub::init_ardupilot()
     init_joystick();            // joystick initialization
 
 #if AP_RELAY_ENABLED
-    relay.init();
+    // relay.init();
 #endif
 
     /*
@@ -116,7 +116,7 @@ void Sub::init_ardupilot()
 #endif
 
 #ifdef USERHOOK_INIT
-    USERHOOK_INIT
+    // USERHOOK_INIT
 #endif
 
     // Init baro and determine if we have external (depth) pressure sensor

@@ -1,7 +1,7 @@
 #include "Rover.h"
 
 // set ahrs home to current location from inertial-nav location
-bool Rover::set_home_to_current_location(bool lock) override
+bool Rover::set_home_to_current_location(bool lock)
 {
     Location temp_loc;
     if (ahrs.have_inertial_nav() && ahrs.get_location(temp_loc)) {
