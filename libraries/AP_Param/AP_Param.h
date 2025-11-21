@@ -38,6 +38,9 @@
 // optionally enable debug code for dumping keys
 #define AP_PARAM_KEY_DUMP 0
 
+#define USERHOOK_INIT true
+#define AP_VTX_CLI_ENABLED true
+
 #if defined(HAL_GCS_ENABLED)
     #define AP_PARAM_DEFAULTS_ENABLED HAL_GCS_ENABLED
 #else

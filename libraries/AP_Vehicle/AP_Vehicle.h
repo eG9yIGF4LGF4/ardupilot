@@ -276,6 +276,14 @@ public:
      */
     virtual bool get_rate_ef_targets(Vector3f& rate_ef_targets) const { return false; }
 
+#if AP_AHRS_ENABLED
+    virtual bool set_home_to_current_location(bool lock) WARN_IF_UNUSED { return false; }
+    virtual bool set_home(const Location& loc, bool lock) WARN_IF_UNUSED { return false; }
+#endif
+#if AP_VIDEOTX_ENABLED
+    AP_VideoTX vtx;
+#endif
+
 protected:
 
     virtual void init_ardupilot() = 0;
@@ -319,9 +327,8 @@ protected:
 #if HAL_GYROFFT_ENABLED
     AP_GyroFFT gyro_fft;
 #endif
-#if AP_VIDEOTX_ENABLED
-    AP_VideoTX vtx;
-#endif
+
+#if AP_SERIALMANAGER_ENABLED
     AP_SerialManager serial_manager;
 
 #if AP_RELAY_ENABLED

@@ -376,6 +376,80 @@ const AP_Param::Info Copter::var_info[] = {
     GSCALAR(poshold_brake_angle_max, "PHLD_BRAKE_ANGLE",  POSHOLD_BRAKE_ANGLE_DEFAULT),
 #endif
 
+    // @Param: VTX_CONTROL_BAND
+    // @DisplayName: VTX Control Band RC
+    // @Description: Specify channel for switching VTX band
+    // @Range: 0 16
+    // @RebootRequired: False
+    GSCALAR(band_ch, "VTX_CONTROL_BAND", 0),
+
+    // @Param: VTX_CONTROL_CHAN
+    // @DisplayName: VTX Control Channel RC
+    // @Description: Specify channel for switching VTX band
+    // @Range: 0 16
+    // @RebootRequired: False
+    GSCALAR(channel_ch, "VTX_CONTROL_CHAN", 0),
+
+#if AP_VTX_CLI_ENABLED
+
+    GSCALAR(vtx_cli0_begin, "VTX_CLI0_BEGIN", 0),
+    GSCALAR(vtx_cli0_band, "VTX_CLI0_BAND", 0),
+    GSCALAR(vtx_cli0_channel, "VTX_CLI0_CHANNEL", 0),
+    GSCALAR(vtx_cli0_power, "VTX_CLI0_POWER", 0),
+    GSCALAR(vtx_cli0_rc, "VTX_CLI0_RC", 0),
+    GSCALAR(vtx_cli0_end, "VTX_CLI0_END", 0),
+
+    GSCALAR(vtx_cli1_begin, "VTX_CLI1_BEGIN", 0),
+    GSCALAR(vtx_cli1_band, "VTX_CLI1_BAND", 0),
+    GSCALAR(vtx_cli1_channel, "VTX_CLI1_CHANNEL", 0),
+    GSCALAR(vtx_cli1_power, "VTX_CLI1_POWER", 0),
+    GSCALAR(vtx_cli1_rc, "VTX_CLI1_RC", 0),
+    GSCALAR(vtx_cli1_end, "VTX_CLI1_END", 0),
+
+    GSCALAR(vtx_cli2_begin, "VTX_CLI2_BEGIN", 0),
+    GSCALAR(vtx_cli2_band, "VTX_CLI2_BAND", 0),
+    GSCALAR(vtx_cli2_channel, "VTX_CLI2_CHANNEL", 0),
+    GSCALAR(vtx_cli2_power, "VTX_CLI2_POWER", 0),
+    GSCALAR(vtx_cli2_rc, "VTX_CLI2_RC", 0),
+    GSCALAR(vtx_cli2_end, "VTX_CLI2_END", 0),
+
+    GSCALAR(vtx_cli3_begin, "VTX_CLI3_BEGIN", 0),
+    GSCALAR(vtx_cli3_band, "VTX_CLI3_BAND", 0),
+    GSCALAR(vtx_cli3_channel, "VTX_CLI3_CHANNEL", 0),
+    GSCALAR(vtx_cli3_power, "VTX_CLI3_POWER", 0),
+    GSCALAR(vtx_cli3_rc, "VTX_CLI3_RC", 0),
+    GSCALAR(vtx_cli3_end, "VTX_CLI3_END", 0),
+
+    GSCALAR(vtx_cli4_begin, "VTX_CLI4_BEGIN", 0),
+    GSCALAR(vtx_cli4_band, "VTX_CLI4_BAND", 0),
+    GSCALAR(vtx_cli4_channel, "VTX_CLI4_CHANNEL", 0),
+    GSCALAR(vtx_cli4_power, "VTX_CLI4_POWER", 0),
+    GSCALAR(vtx_cli4_rc, "VTX_CLI4_RC", 0),
+    GSCALAR(vtx_cli4_end, "VTX_CLI4_END", 0),
+
+    GSCALAR(vtx_cli5_begin, "VTX_CLI5_BEGIN", 0),
+    GSCALAR(vtx_cli5_band, "VTX_CLI5_BAND", 0),
+    GSCALAR(vtx_cli5_channel, "VTX_CLI5_CHANNEL", 0),
+    GSCALAR(vtx_cli5_power, "VTX_CLI5_POWER", 0),
+    GSCALAR(vtx_cli5_rc, "VTX_CLI5_RC", 0),
+    GSCALAR(vtx_cli5_end, "VTX_CLI5_END", 0),
+
+    GSCALAR(vtx_cli6_begin, "VTX_CLI6_BEGIN", 0),
+    GSCALAR(vtx_cli6_band, "VTX_CLI6_BAND", 0),
+    GSCALAR(vtx_cli6_channel, "VTX_CLI6_CHANNEL", 0),
+    GSCALAR(vtx_cli6_power, "VTX_CLI6_POWER", 0),
+    GSCALAR(vtx_cli6_rc, "VTX_CLI6_RC", 0),
+    GSCALAR(vtx_cli6_end, "VTX_CLI6_END", 0),
+
+    GSCALAR(vtx_cli7_begin, "VTX_CLI7_BEGIN", 0),
+    GSCALAR(vtx_cli7_band, "VTX_CLI7_BAND", 0),
+    GSCALAR(vtx_cli7_channel, "VTX_CLI7_CHANNEL", 0),
+    GSCALAR(vtx_cli7_power, "VTX_CLI7_POWER", 0),
+    GSCALAR(vtx_cli7_rc, "VTX_CLI7_RC", 0),
+    GSCALAR(vtx_cli7_end, "VTX_CLI7_END", 0),
+    
+#endif
+
     // @Param: LAND_REPOSITION
     // @DisplayName: Land repositioning
     // @Description: Enables user input during LAND mode, the landing phase of RTL, and auto mode landings.

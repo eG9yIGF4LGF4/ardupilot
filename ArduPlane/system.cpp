@@ -125,8 +125,45 @@ void Plane::init_ardupilot()
 #endif
 
     AP_Param::reload_defaults_file(true);
-    
-    startup_ground();
+
+    set_mode(mode_initializing, ModeReason::INITIALISED);
+
+#if (GROUND_START_DELAY > 0)
+    gcs().send_text(MAV_SEVERITY_NOTICE,"Ground start with delay");
+    delay(GROUND_START_DELAY * 1000);
+#else
+    gcs().send_text(MAV_SEVERITY_INFO,"Ground start");
+#endif
+
+    //INS ground start
+    //------------------------
+    //
+    startup_INS();
+
+    // Save the settings for in-air restart
+    // ------------------------------------
+    //save_EEPROM_groundstart();
+
+    // initialise mission library
+    mission.init();
+#if HAL_LOGGING_ENABLED
+    mission.set_log_start_mission_item_bit(MASK_LOG_CMD);
+#endif
+
+#ifdef USERHOOK_INIT
+    userhook_init();
+#endif
+
+    // initialise AP_Logger library
+#if HAL_LOGGING_ENABLED
+    logger.setVehicle_Startup_Writer(
+        FUNCTOR_BIND(&plane, &Plane::Log_Write_Vehicle_Startup_Messages, void)
+        );
+#endif
+
+    // reset last heartbeat time, so we don't trigger failsafe on slow
+    // startup
+    gcs().sysid_mygcs_seen(AP_HAL::millis());
 
     // don't initialise aux rc output until after quadplane is setup as
     // that can change initial values of channels
