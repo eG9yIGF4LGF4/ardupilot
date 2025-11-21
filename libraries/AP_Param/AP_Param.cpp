@@ -102,7 +102,7 @@ uint8_t AP_Param::_dynamic_table_sizes[AP_PARAM_MAX_DYNAMIC];
 uint16_t AP_Param::_parameter_count;
 uint16_t AP_Param::_count_marker;
 uint16_t AP_Param::_count_marker_done;
-HAL_Semaphore AP_Param::_count_sem;
+uint16_t AP_Param::_count_sem;
 
 // storage and naming information about all types that can be saved
 const AP_Param::Info *AP_Param::_var_info;
@@ -2624,7 +2624,8 @@ void AP_Param::send_parameter(const char *name, enum ap_var_type var_type, uint8
 uint16_t AP_Param::count_parameters(void)
 {
     // if we haven't cached the parameter count yet...
-    WITH_SEMAPHORE(_count_sem);
+    //WITH_SEMAPHORE(_count_sem);
+
     if (_parameter_count != 0 &&
         _count_marker == _count_marker_done) {
         return _parameter_count;
@@ -2649,6 +2650,7 @@ uint16_t AP_Param::count_parameters(void)
         }
         _parameter_count = count;
         _count_marker_done = marker;
+        _count_sem = 0;
     }
     return _parameter_count;
 }

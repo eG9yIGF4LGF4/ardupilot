@@ -29,7 +29,7 @@ const AP_Param::Info Plane::var_info[] = {
 
     // @Group: SERIAL
     // @Path: ../libraries/AP_SerialManager/AP_SerialManager.cpp
-    GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
+    // GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
 
     // @Param: AUTOTUNE_LEVEL
     // @DisplayName: Autotune level
@@ -738,7 +738,7 @@ const AP_Param::Info Plane::var_info[] = {
 
     // @Group: BARO
     // @Path: ../libraries/AP_Baro/AP_Baro.cpp
-    GOBJECT(barometer, "BARO", AP_Baro),
+    // GOBJECT(barometer, "BARO", AP_Baro),
 
     // GPS driver
     // @Group: GPS
@@ -755,11 +755,11 @@ const AP_Param::Info Plane::var_info[] = {
     // @Path: AP_Arming.cpp,../libraries/AP_Arming/AP_Arming.cpp
     GOBJECT(arming,                 "ARMING_", AP_Arming_Plane),
 
-#if AP_RELAY_ENABLED
-    // @Group: RELAY
-    // @Path: ../libraries/AP_Relay/AP_Relay.cpp
-    GOBJECT(relay,                  "RELAY", AP_Relay),
-#endif
+// #if AP_RELAY_ENABLED
+//     // @Group: RELAY
+//     // @Path: ../libraries/AP_Relay/AP_Relay.cpp
+//     GOBJECT(relay,                  "RELAY", AP_Relay),
+// #endif
 
 #if PARACHUTE == ENABLED
 	// @Group: CHUTE_
@@ -1004,17 +1004,17 @@ const AP_Param::Info Plane::var_info[] = {
     // @Path: ../libraries/AP_Vehicle/AP_Vehicle.cpp
     PARAM_VEHICLE_INFO,
 
-#if AP_QUICKTUNE_ENABLED
-    // @Group: QWIK_
-    // @Path: ../libraries/AP_Quicktune/AP_Quicktune.cpp
-    GOBJECT(quicktune, "QWIK_",  AP_Quicktune),
-#endif
+// #if AP_QUICKTUNE_ENABLED
+//     // @Group: QWIK_
+//     // @Path: ../libraries/AP_Quicktune/AP_Quicktune.cpp
+//     GOBJECT(quicktune, "QWIK_",  AP_Quicktune),
+// #endif
 
-#if HAL_GCS_ENABLED
-    // @Group: MAV
-    // @Path: ../libraries/GCS_MAVLink/GCS.cpp
-    GOBJECT(_gcs,           "MAV",  GCS),
-#endif
+// #if HAL_GCS_ENABLED
+//     // @Group: MAV
+//     // @Path: ../libraries/GCS_MAVLink/GCS.cpp
+//     GOBJECT(_gcs,           "MAV",  GCS),
+// #endif
 
 
 #if AP_VTX_CLI_ENABLED

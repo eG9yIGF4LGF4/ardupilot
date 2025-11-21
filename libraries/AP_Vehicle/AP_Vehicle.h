@@ -289,7 +289,6 @@ protected:
     virtual void init_ardupilot() = 0;
     virtual void load_parameters() = 0;
     virtual void set_control_channels() {}
-
     // board specific config
     AP_BoardConfig BoardConfig;
 
@@ -309,6 +308,7 @@ protected:
 #if AP_GPS_ENABLED
     AP_GPS gps;
 #endif
+
     AP_Baro barometer;
     Compass compass;
     AP_InertialSensor ins;
@@ -328,12 +328,12 @@ protected:
     AP_GyroFFT gyro_fft;
 #endif
 
-#if AP_SERIALMANAGER_ENABLED
-    AP_SerialManager serial_manager;
+// #if AP_SERIALMANAGER_ENABLED
+//     AP_SerialManager serial_manager;
 
-#if AP_RELAY_ENABLED
-    AP_Relay relay;
-#endif
+// #if AP_RELAY_ENABLED
+//     AP_Relay relay;
+// #endif
 
 #if AP_SERVORELAYEVENTS_ENABLED
     AP_ServoRelayEvents ServoRelayEvents;

@@ -269,8 +269,8 @@ void AP_Vehicle::setup()
     // load the default values of variables listed in var_info[]
     AP_Param::setup_sketch_defaults();
 
-    // initialise serial port
-    serial_manager.init_console();
+    // // initialise serial port
+    // serial_manager.init_console();
 
     DEV_PRINTF("\n\nInit %s"
                         "\n\nFree RAM: %u\n",
@@ -319,7 +319,7 @@ void AP_Vehicle::setup()
 #endif
 
     // initialise serial ports
-    serial_manager.init();
+    // serial_manager.init();
 #if HAL_GCS_ENABLED
     gcs().setup_console();
 #endif

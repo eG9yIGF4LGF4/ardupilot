@@ -60,7 +60,7 @@ bool AP_VideoTX_CLI::initVtxCliCommandOptions()
 
         float val;
 
-        for(int i = 0; i < 8; i++) {
+        for(int i = 0; i < VTX_CLI_COMMANDS_COUNT; i++) {
             auto o = new VTX_CLI_COMMAND_OPTIONS();
 
             o->band = AP::param()->get(VTX_CLI_PARAM(i, "_BAND"), val) ? val : 0;
@@ -96,7 +96,7 @@ void AP_VideoTX_CLI::set_parameters()
     AP_VideoTX* vtx = &vehicle->vtx;
     RC_Channels* rc = RC_Channels::get_singleton();
 
-    for(int i = 0; i < 8; i++) {
+    for(int i = 0; i < VTX_CLI_COMMANDS_COUNT; i++) {
         uint16_t pwm = 0;
         auto options = &getVtxCliCommandOptionsAll()[i];
         

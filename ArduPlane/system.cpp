@@ -42,9 +42,9 @@ void Plane::init_ardupilot()
 #endif
     rc().init();
 
-#if AP_RELAY_ENABLED
-    relay.init();
-#endif
+// #if AP_RELAY_ENABLED
+//     relay.init();
+// #endif
 
     // initialise notify system
     notify.init();
@@ -90,7 +90,7 @@ void Plane::init_ardupilot()
 
     // GPS Initialization
     gps.set_log_gps_bit(MASK_LOG_GPS);
-    gps.init(serial_manager);
+    // gps.init(serial_manager);
 
     init_rc_in();               // sets up rc channels from radio
 
@@ -104,10 +104,10 @@ void Plane::init_ardupilot()
     camera.init();
 #endif
 
-#if AP_LANDINGGEAR_ENABLED
-    // initialise landing gear position
-    g2.landing_gear.init();
-#endif
+// #if AP_LANDINGGEAR_ENABLED
+//     // initialise landing gear position
+//     g2.landing_gear.init();
+// #endif
 
 #if FENCE_TRIGGERED_PIN > 0
     hal.gpio->pinMode(FENCE_TRIGGERED_PIN, HAL_GPIO_OUTPUT);
@@ -138,7 +138,7 @@ void Plane::init_ardupilot()
     //INS ground start
     //------------------------
     //
-    startup_INS();
+    // startup_INS();
 
     // Save the settings for in-air restart
     // ------------------------------------
@@ -147,7 +147,7 @@ void Plane::init_ardupilot()
     // initialise mission library
     mission.init();
 #if HAL_LOGGING_ENABLED
-    mission.set_log_start_mission_item_bit(MASK_LOG_CMD);
+    // mission.set_log_start_mission_item_bit(MASK_LOG_CMD);
 #endif
 
 #ifdef USERHOOK_INIT
@@ -163,7 +163,7 @@ void Plane::init_ardupilot()
 
     // reset last heartbeat time, so we don't trigger failsafe on slow
     // startup
-    gcs().sysid_mygcs_seen(AP_HAL::millis());
+    //gcs().sysid_mygcs_seen(AP_HAL::millis());
 
     // don't initialise aux rc output until after quadplane is setup as
     // that can change initial values of channels

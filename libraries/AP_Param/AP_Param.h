@@ -795,7 +795,7 @@ private:
     static uint16_t             _parameter_count;
     static uint16_t             _count_marker;
     static uint16_t             _count_marker_done;
-    static HAL_Semaphore        _count_sem;
+    static uint16_t             _count_sem;
     static const struct Info *  _var_info;
 
 #if AP_PARAM_DYNAMIC_ENABLED

@@ -1268,9 +1268,9 @@ public:
     bool set_land_descent_rate(float descent_rate) override;
 #endif // AP_SCRIPTING_ENABLED
 
-    bool tkoff_option_is_set(AP_FixedWing::TakeoffOption option) const {
-        return (aparm.takeoff_options & int32_t(option)) != 0;
-    }
+    // bool tkoff_option_is_set(AP_FixedWing::TakeoffOption option) const {
+    //     return (aparm.takeoff_options & int32_t(option)) != 0;
+    // }
    
     // UserCode.cpp
     void userhook_init();
