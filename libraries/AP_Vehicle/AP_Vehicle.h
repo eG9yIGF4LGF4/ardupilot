@@ -443,7 +443,7 @@ protected:
 #if AP_DDS_ENABLED
     // Declare the dds client for communication with ROS2 and DDS(common for all vehicles)
     AP_DDS_Client *dds_client;
-    bool init_dds_client() WARN_IF_UNUSED;
+    bool init_dds_client();
 #endif
 
     // Check if this mode can be entered from the GCS

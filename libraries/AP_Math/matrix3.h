@@ -208,7 +208,7 @@ public:
      * @return If this matrix is invertible, then true is returned. Otherwise,
      * \p inv is unmodified and false is returned.
      */
-    bool inverse(Matrix3<T>& inv) const WARN_IF_UNUSED;
+    bool inverse(Matrix3<T>& inv) const;
 
     /**
      * Invert this matrix if it is invertible.
@@ -216,7 +216,7 @@ public:
      * @return Return true if this matrix could be successfully inverted and
      * false otherwise.
      */
-    bool invert() WARN_IF_UNUSED;
+    bool invert();
 
     // zero the matrix
     void        zero(void);

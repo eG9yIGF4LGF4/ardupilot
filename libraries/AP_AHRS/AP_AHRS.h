@@ -93,7 +93,7 @@ public:
     bool get_location(Location &loc) const;
 
     // get latest altitude estimate above ground level in meters and validity flag
-    bool get_hagl(float &hagl) const WARN_IF_UNUSED;
+    bool get_hagl(float &hagl) const;
 
     // status reporting of estimated error
     float           get_error_rp() const;
@@ -192,13 +192,13 @@ public:
     // other than an actual airspeed sensor), if available. return
     // true if we have a synthetic airspeed.  ret will not be modified
     // on failure.
-    bool synthetic_airspeed(float &ret) const WARN_IF_UNUSED;
+    bool synthetic_airspeed(float &ret) const;
 
     // true if compass is being used
     bool use_compass();
 
     // return the quaternion defining the rotation from NED to XYZ (body) axes
-    bool get_quaternion(Quaternion &quat) const WARN_IF_UNUSED;
+    bool get_quaternion(Quaternion &quat) const;
 
     // return secondary attitude solution if available, as eulers in radians
     bool get_secondary_attitude(Vector3f &eulers) const {
@@ -237,7 +237,7 @@ public:
     // set the EKF's origin location in 10e7 degrees.  This should only
     // be called when the EKF has no absolute position reference (i.e. GPS)
     // from which to decide the origin on its own
-    bool set_origin(const Location &loc) WARN_IF_UNUSED;
+    bool set_origin(const Location &loc);
 
 #if AP_AHRS_POSITION_RESET_ENABLED
     // Set the EKF's NE horizontal position states and their corresponding variances from the supplied WGS-84 location
@@ -251,33 +251,33 @@ public:
 #endif
 
     // returns the inertial navigation origin in lat/lon/alt
-    bool get_origin(Location &ret) const WARN_IF_UNUSED;
+    bool get_origin(Location &ret) const;
 
     bool have_inertial_nav() const;
 
     // return a ground velocity in meters/second, North/East/Down
     // order. Must only be called if have_inertial_nav() is true
-    bool get_velocity_NED(Vector3f &vec) const WARN_IF_UNUSED;
+    bool get_velocity_NED(Vector3f &vec) const;
 
     // return the relative position NED from either home or origin
     // return true if the estimate is valid
-    bool get_relative_position_NED_home(Vector3f &vec) const WARN_IF_UNUSED;
-    bool get_relative_position_NED_origin(Vector3f &vec) const WARN_IF_UNUSED;
+    bool get_relative_position_NED_home(Vector3f &vec) const;
+    bool get_relative_position_NED_origin(Vector3f &vec) const;
 
     // return the relative position NE from home or origin
     // return true if the estimate is valid
-    bool get_relative_position_NE_home(Vector2f &posNE) const WARN_IF_UNUSED;
-    bool get_relative_position_NE_origin(Vector2f &posNE) const WARN_IF_UNUSED;
+    bool get_relative_position_NE_home(Vector2f &posNE) const;
+    bool get_relative_position_NE_origin(Vector2f &posNE) const;
 
     // return the relative position down from home or origin
     // baro will be used for the _home relative one if the EKF isn't
     void get_relative_position_D_home(float &posD) const;
-    bool get_relative_position_D_origin(float &posD) const WARN_IF_UNUSED;
+    bool get_relative_position_D_origin(float &posD) const;
 
     // return location corresponding to vector relative to the
     // vehicle's origin
-    bool get_location_from_origin_offset(Location &loc, const Vector3p &offset_ned) const WARN_IF_UNUSED;
-    bool get_location_from_home_offset(Location &loc, const Vector3p &offset_ned) const WARN_IF_UNUSED;
+    bool get_location_from_origin_offset(Location &loc, const Vector3p &offset_ned) const;
+    bool get_location_from_home_offset(Location &loc, const Vector3p &offset_ned) const;
 
     // Get a derivative of the vertical position in m/s which is kinematically consistent with the vertical position is required by some control loops.
     // This is different to the vertical velocity from the EKF which is not always consistent with the vertical position due to the various errors that are being corrected for.
@@ -379,7 +379,7 @@ public:
 
     // get a source's velocity innovations
     // returns true on success and results are placed in innovations and variances arguments
-    bool get_vel_innovations_and_variances_for_source(uint8_t source, Vector3f &innovations, Vector3f &variances) const WARN_IF_UNUSED;
+    bool get_vel_innovations_and_variances_for_source(uint8_t source, Vector3f &innovations, Vector3f &variances) const;
 
     // returns the expected NED magnetic field
     bool get_mag_field_NED(Vector3f& ret) const;
@@ -542,7 +542,7 @@ public:
     // set the home location in 10e7 degrees. This should be called
     // when the vehicle is at this position. It is assumed that the
     // current barometer and GPS altitudes correspond to this altitude
-    bool set_home(const Location &loc) WARN_IF_UNUSED;
+    bool set_home(const Location &loc);
 
     /*
      * Attitude-related public methods and attributes:
@@ -881,7 +881,7 @@ private:
     EKFType _active_EKF_type(void) const;
 
     // return a wind estimation vector, in m/s
-    bool _wind_estimate(Vector3f &wind) const WARN_IF_UNUSED;
+    bool _wind_estimate(Vector3f &wind) const;
 
     // return a true airspeed estimate (navigation airspeed) if
     // available. return true if we have an estimate
@@ -892,7 +892,7 @@ private:
     bool _airspeed_vector_true(Vector3f &vec) const;
 
     // return the quaternion defining the rotation from NED to XYZ (body) axes
-    bool _get_quaternion(Quaternion &quat) const WARN_IF_UNUSED;
+    bool _get_quaternion(Quaternion &quat) const;
 
     // return secondary position solution if available
     bool _get_secondary_position(Location &loc) const;
@@ -904,14 +904,14 @@ private:
     void _getCorrectedDeltaVelocityNED(Vector3f& ret, float& dt) const;
 
     // returns the inertial navigation origin in lat/lon/alt
-    bool _get_origin(Location &ret) const WARN_IF_UNUSED;
+    bool _get_origin(Location &ret) const;
 
     // return origin for a specified EKF type
     bool _get_origin(EKFType type, Location &ret) const;
 
     // return a ground velocity in meters/second, North/East/Down
     // order. Must only be called if have_inertial_nav() is true
-    bool _get_velocity_NED(Vector3f &vec) const WARN_IF_UNUSED;
+    bool _get_velocity_NED(Vector3f &vec) const;
 
     // get secondary EKF type.  returns false if no secondary (i.e. only using DCM)
     bool _get_secondary_EKF_type(EKFType &secondary_ekf_type) const;

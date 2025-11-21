@@ -17,7 +17,7 @@ public:
     CLASS_NO_COPY(AC_P_2D);
 
     // set target and measured inputs to P controller and calculate outputs
-    Vector2f update_all(postype_t &target_x, postype_t &target_y, const Vector2f &measurement) WARN_IF_UNUSED;
+    Vector2f update_all(postype_t &target_x, postype_t &target_y, const Vector2f &measurement);
 
     // set target and measured inputs to P controller and calculate outputs
     // measurement is provided as 3-axis vector but only x and y are used

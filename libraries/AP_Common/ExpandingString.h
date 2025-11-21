@@ -61,5 +61,5 @@ private:
     bool external_buffer;
 
     // try to expand the buffer
-    bool expand(uint32_t min_needed) WARN_IF_UNUSED;
+    bool expand(uint32_t min_needed);
 };

@@ -205,7 +205,7 @@ public:
     bool is_special_vehicle(uint32_t icao) const { return _special_ICAO_target != 0 && (_special_ICAO_target == (int32_t)icao); }
 
     // confirm a value is a valid callsign
-    static bool is_valid_callsign(uint16_t octal) WARN_IF_UNUSED;
+    static bool is_valid_callsign(uint16_t octal);
 
     // Convert base 8 or 16 to decimal. Used to convert an octal/hexadecimal value
     // stored on a GCS as a string field in different format, but then transmitted

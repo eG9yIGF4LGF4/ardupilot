@@ -47,7 +47,7 @@ public:
     AnalogSource(int16_t pin);
     float read_average() override;
     float read_latest() override;
-    bool set_pin(uint8_t p) override WARN_IF_UNUSED;
+    bool set_pin(uint8_t p) override;
     float voltage_average() override;
     float voltage_latest() override;
     float voltage_average_ratiometric() override;

@@ -85,7 +85,7 @@ private:
     // Only some of the fix types satisfy a healthy filter.
     // GQ7_VERT_GYRO is NOT considered healthy for now.
     // This may be vehicle-dependent in the future.
-    static bool filter_state_healthy(FilterState state) WARN_IF_UNUSED;
+    static bool filter_state_healthy(FilterState state);
 
     AP_HAL::UARTDriver *uart;
     HAL_Semaphore sem;

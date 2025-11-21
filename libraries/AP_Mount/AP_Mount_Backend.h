@@ -268,19 +268,19 @@ protected:
 
     // get angle targets (in radians) to a Location
     // returns true on success, false on failure
-    bool get_angle_target_to_location(const Location &loc, MountTarget& angle_rad) const WARN_IF_UNUSED;
+    bool get_angle_target_to_location(const Location &loc, MountTarget& angle_rad) const;
 
     // get angle targets (in radians) to ROI location
     // returns true on success, false on failure
-    bool get_angle_target_to_roi(MountTarget& angle_rad) const WARN_IF_UNUSED;
+    bool get_angle_target_to_roi(MountTarget& angle_rad) const;
 
     // get angle targets (in radians) to home location
     // returns true on success, false on failure
-    bool get_angle_target_to_home(MountTarget& angle_rad) const WARN_IF_UNUSED;
+    bool get_angle_target_to_home(MountTarget& angle_rad) const;
 
     // get angle targets (in radians) to a vehicle with sysid of _target_sysid
     // returns true on success, false on failure
-    bool get_angle_target_to_sysid(MountTarget& angle_rad) const WARN_IF_UNUSED;
+    bool get_angle_target_to_sysid(MountTarget& angle_rad) const;
 
     // update angle targets using a given rate target
     // the resulting angle_rad yaw frame will match the rate_rad yaw frame

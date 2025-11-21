@@ -19,8 +19,8 @@ public:
     // target and error are filtered
     // the derivative is then calculated and filtered
     // the integral is then updated based on the setting of the limit flag
-    float update_all(float target, float measurement, float dt, bool limit = false) WARN_IF_UNUSED;
-    float update_all(float target, float measurement, float dt, bool limit_neg, bool limit_pos) WARN_IF_UNUSED;
+    float update_all(float target, float measurement, float dt, bool limit = false);
+    float update_all(float target, float measurement, float dt, bool limit_neg, bool limit_pos);
 
     // update the integral
     // if the limit flags are set the integral is only allowed to shrink
@@ -50,8 +50,8 @@ public:
     AP_Float &filt_E_hz() WARN_IF_UNUSED { return _filt_E_hz; }
     AP_Float &filt_D_hz() WARN_IF_UNUSED { return _filt_D_hz; }
     float imax() const WARN_IF_UNUSED { return _kimax.get(); }
-    float get_filt_E_alpha(float dt) const WARN_IF_UNUSED;
-    float get_filt_D_alpha(float dt) const WARN_IF_UNUSED;
+    float get_filt_E_alpha(float dt) const;
+    float get_filt_D_alpha(float dt) const;
 
     // set accessors
     void kP(float v) { _kp.set(v); }

@@ -29,7 +29,7 @@ public:
     uint32_t space(void) const;
 
     // true if available() is zero
-    bool is_empty(void) const WARN_IF_UNUSED;
+    bool is_empty(void) const;
 
     // write bytes to ringbuffer. Returns number of bytes written
     uint32_t write(const uint8_t *data, uint32_t len);
@@ -38,7 +38,7 @@ public:
     uint32_t read(uint8_t *data, uint32_t len);
 
     // read a byte from ring buffer. Returns true on success, false otherwise
-    bool read_byte(uint8_t *data) WARN_IF_UNUSED;
+    bool read_byte(uint8_t *data);
 
     /*
       update bytes at the read pointer. Used to update an object without

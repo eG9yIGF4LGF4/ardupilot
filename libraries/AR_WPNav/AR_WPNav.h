@@ -41,19 +41,19 @@ public:
 
     // set desired location and (optionally) next_destination
     // next_destination should be provided if known to allow smooth cornering
-    virtual bool set_desired_location(const Location &destination, Location next_destination = Location()) WARN_IF_UNUSED;
+    virtual bool set_desired_location(const Location &destination, Location next_destination = Location());
 
     // set desired location to a reasonable stopping point, return true on success
-    bool set_desired_location_to_stopping_location()  WARN_IF_UNUSED;
+    bool set_desired_location_to_stopping_location() ;
 
     // set desired location as offset from the EKF origin, return true on success
-    bool set_desired_location_NED(const Vector3f& destination) WARN_IF_UNUSED;
-    bool set_desired_location_NED(const Vector3f &destination, const Vector3f &next_destination) WARN_IF_UNUSED;
+    bool set_desired_location_NED(const Vector3f& destination);
+    bool set_desired_location_NED(const Vector3f &destination, const Vector3f &next_destination);
 
     // set desired location but expect the destination to be updated again in the near future
     // position controller input shaping will be used for navigation instead of scurves
     // Note: object avoidance is not supported if this method is used
-    bool set_desired_location_expect_fast_update(const Location &destination) WARN_IF_UNUSED;
+    bool set_desired_location_expect_fast_update(const Location &destination);
 
     // true if vehicle has reached desired location. defaults to true because this is normally used by missions and we do not want the mission to become stuck
     virtual bool reached_destination() const { return _reached_destination; }
@@ -98,7 +98,7 @@ public:
 
     // calculate stopping location using current position and attitude controller provided maximum deceleration
     // returns true on success, false on failure
-    bool get_stopping_location(Location& stopping_loc) WARN_IF_UNUSED;
+    bool get_stopping_location(Location& stopping_loc);
 
     // is_fast_waypoint returns true if vehicle will not stop at destination (e.g. set_desired_location provided a next_destination)
     bool is_fast_waypoint() const { return _fast_waypoint; }

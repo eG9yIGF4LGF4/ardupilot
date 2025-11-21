@@ -205,8 +205,8 @@ private:
     // system.cpp
     void init_ardupilot() override;
     bool get_home_eeprom(Location &loc) const;
-    bool set_home_eeprom(const Location &temp) WARN_IF_UNUSED;
-    bool set_home(const Location &temp) WARN_IF_UNUSED;
+    bool set_home_eeprom(const Location &temp);
+    bool set_home(const Location &temp);
     void prepare_servos();
     void set_mode(Mode &newmode, ModeReason reason);
     bool set_mode(uint8_t new_mode, ModeReason reason) override;

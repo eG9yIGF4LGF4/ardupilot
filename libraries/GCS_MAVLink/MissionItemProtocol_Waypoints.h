@@ -28,7 +28,7 @@ public:
 protected:
 
     // clear_all_items() is called to clear all items on the vehicle
-    bool clear_all_items() override WARN_IF_UNUSED;
+    bool clear_all_items() override;
 
     // next_item_ap_message_id returns an item from the ap_message
     // enumeration which (when acted upon by the GCS class) will send
@@ -43,7 +43,7 @@ private:
 
     // append_item() is called by the base class to add the supplied
     // item to the end of the list of stored items.
-    MAV_MISSION_RESULT append_item(const mavlink_mission_item_int_t &) override WARN_IF_UNUSED;
+    MAV_MISSION_RESULT append_item(const mavlink_mission_item_int_t &) override;
 
     // get_item() fills in ret_packet based on packet; _link is the
     // link the request was received on, and msg is the undecoded
@@ -52,7 +52,7 @@ private:
     MAV_MISSION_RESULT get_item(const GCS_MAVLINK &_link,
                                 const mavlink_message_t &msg,
                                 const mavlink_mission_request_int_t &packet,
-                                mavlink_mission_item_int_t &ret_packet) override WARN_IF_UNUSED;
+                                mavlink_mission_item_int_t &ret_packet) override;
 
     // item_count() returns the number of stored items
     uint16_t item_count() const override;
@@ -62,7 +62,7 @@ private:
     uint16_t max_items() const override;
 
     // replace_item() replaces an item in the stored list
-    MAV_MISSION_RESULT replace_item(const mavlink_mission_item_int_t &) override WARN_IF_UNUSED;
+    MAV_MISSION_RESULT replace_item(const mavlink_mission_item_int_t &) override;
 
 };
 

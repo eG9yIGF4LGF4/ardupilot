@@ -18,9 +18,9 @@ public:
 
     void release();
 
-    bool is_pressed() const WARN_IF_UNUSED;
+    bool is_pressed() const;
 
-    uint8_t get_count() const WARN_IF_UNUSED;
+    uint8_t get_count() const;
 
     void clear_count();
 

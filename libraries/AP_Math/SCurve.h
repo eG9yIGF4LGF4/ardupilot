@@ -89,10 +89,10 @@ public:
     // target_pos - set to this segment's origin and it will be updated to the current position target
     // target_vel and target_accel - updated with new targets
     // advance_target_along_track returns true if vehicle has passed the apex of the corner
-    bool advance_target_along_track(SCurve &prev_leg, SCurve &next_leg, float wp_radius, float accel_corner, bool fast_waypoint, float dt, Vector3f &target_pos, Vector3f &target_vel, Vector3f &target_accel) WARN_IF_UNUSED;
+    bool advance_target_along_track(SCurve &prev_leg, SCurve &next_leg, float wp_radius, float accel_corner, bool fast_waypoint, float dt, Vector3f &target_pos, Vector3f &target_vel, Vector3f &target_accel);
 
     // time has reached the end of the sequence
-    bool finished() const WARN_IF_UNUSED;
+    bool finished() const;
 
 private:
 
@@ -118,22 +118,22 @@ private:
     float get_time_elapsed() const WARN_IF_UNUSED { return time; }
 
     // time at the end of the sequence
-    float time_end() const WARN_IF_UNUSED;
+    float time_end() const;
 
     // time left before sequence will complete
-    float get_time_remaining() const WARN_IF_UNUSED;
+    float get_time_remaining() const;
 
     // time when acceleration section of the sequence will complete
-    float get_accel_finished_time() const WARN_IF_UNUSED;
+    float get_accel_finished_time() const;
 
     // return true if the sequence is braking to a stop
-    bool braking() const WARN_IF_UNUSED;
+    bool braking() const;
 
     // return time offset used to initiate the turn onto leg
-    float time_turn_in() const WARN_IF_UNUSED;
+    float time_turn_in() const;
 
     // return time offset used to initiate the turn from leg
-    float time_turn_out() const WARN_IF_UNUSED;
+    float time_turn_out() const;
 
     // increment the internal time
     void advance_time(float dt);
@@ -173,7 +173,7 @@ private:
                               float accel_xy, float accel_z);
 
     // return true if the curve is valid.  Used to identify and protect against code errors
-    bool valid() const WARN_IF_UNUSED;
+    bool valid() const;
 
 #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
     // debugging messages

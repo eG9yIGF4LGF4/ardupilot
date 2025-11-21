@@ -56,7 +56,7 @@ public:
     // methods primarily for MissionItemProtocol_Fence to use:
     // return the total number of points stored
     uint16_t num_stored_items() const { return _eeprom_item_count; }
-    bool get_item(const uint16_t seq, AC_PolyFenceItem &item) WARN_IF_UNUSED;
+    bool get_item(const uint16_t seq, AC_PolyFenceItem &item);
 
     ///
     /// exclusion polygons
@@ -131,9 +131,9 @@ public:
     void handle_msg(class GCS_MAVLINK &link, const mavlink_message_t& msg);
 
     //  breached() - returns true if the vehicle has breached any fence
-    bool breached() const WARN_IF_UNUSED;
+    bool breached() const;
     //  breached(Location&) - returns true if location is outside the boundary
-    bool breached(const Location& loc) const WARN_IF_UNUSED;
+    bool breached(const Location& loc) const;
 
     // returns true if a polygonal include fence could be returned
     bool inclusion_boundary_available() const WARN_IF_UNUSED {
@@ -150,7 +150,7 @@ public:
     uint16_t max_items() const;
 
     // write_fence - validate and write count new_items to permanent storage
-    bool write_fence(const AC_PolyFenceItem *new_items, uint16_t count)  WARN_IF_UNUSED;
+    bool write_fence(const AC_PolyFenceItem *new_items, uint16_t count) ;
 
     /*
      * Loaded Fence functionality
@@ -162,7 +162,7 @@ public:
     // load polygon points stored in eeprom into
     // _loaded_offsets_from_origin and perform validation.  returns
     // true if load successfully completed
-    bool load_from_eeprom() WARN_IF_UNUSED;
+    bool load_from_eeprom();
 
     // allow threads to lock against AHRS update
     HAL_Semaphore &get_loaded_fence_semaphore(void) {
@@ -175,7 +175,7 @@ public:
     // get_return_point - returns latitude/longitude of return point.
     // This works with storage - the returned vector is absolute
     // lat/lon.
-    bool get_return_point(Vector2l &ret) WARN_IF_UNUSED;
+    bool get_return_point(Vector2l &ret);
 
     // return total number of fences - polygons and circles
     uint16_t total_fence_count() const {
@@ -222,7 +222,7 @@ private:
 
     // check_indexed - read eeprom and create index if the index does
     // not already exist
-    bool check_indexed() WARN_IF_UNUSED;
+    bool check_indexed();
 
     // find_first_fence - return first fence in index of specific type
     FenceIndex *find_first_fence(const AC_PolyFenceType type) const;
@@ -231,10 +231,10 @@ private:
     // fence.  If it is, entry will be the relevant FenceIndex.  i
     // will be the offset within _loaded_offsets_from_origin where the
     // first point in the fence is found
-    bool find_index_for_seq(const uint16_t seq, const FenceIndex *&entry, uint16_t &i) const WARN_IF_UNUSED;
+    bool find_index_for_seq(const uint16_t seq, const FenceIndex *&entry, uint16_t &i) const;
     // find_storage_offset_for_seq - uses the index to return an
     // offset into storage for an item
-    bool find_storage_offset_for_seq(const uint16_t seq, uint16_t &offset, AC_PolyFenceType &type, uint16_t &vertex_count_offset) const WARN_IF_UNUSED;
+    bool find_storage_offset_for_seq(const uint16_t seq, uint16_t &offset, AC_PolyFenceType &type, uint16_t &vertex_count_offset) const;
 
     uint16_t sum_of_polygon_point_counts_and_returnpoint();
 
@@ -248,7 +248,7 @@ private:
     static const uint8_t new_fence_storage_magic = 235;
 
     // validate_fence - returns true if new_items look completely valid
-    bool validate_fence(const AC_PolyFenceItem *new_items, uint16_t count) const WARN_IF_UNUSED;
+    bool validate_fence(const AC_PolyFenceItem *new_items, uint16_t count) const;
 
     // _eos_offset - stores the offset in storage of the
     // end-of-storage marker.  Used by low-level manipulation code to
@@ -257,10 +257,10 @@ private:
 
     // formatted - returns true if the fence storage space seems to be
     // formatted for new-style fence storage
-    bool formatted() const WARN_IF_UNUSED;
+    bool formatted() const;
     // format - format the storage space for use by
     // the new polyfence code
-    bool format() WARN_IF_UNUSED;
+    bool format();
 
 
     /*
@@ -343,7 +343,7 @@ private:
     // the result into pos_cm.
     bool scale_latlon_from_origin(const Location &origin,
                                   const Vector2l &point,
-                                  Vector2f &pos_cm) WARN_IF_UNUSED;
+                                  Vector2f &pos_cm);
    
     // read_polygon_from_storage - reads vertex_count
     // latitude/longitude points from offset in permanent storage,
@@ -353,7 +353,7 @@ private:
                                    uint16_t &read_offset,
                                    const uint8_t vertex_count,
                                    Vector2f *&next_storage_point,
-                                   Vector2l *&next_storage_point_lla) WARN_IF_UNUSED;
+                                   Vector2l *&next_storage_point_lla);
 
 #if AC_POLYFENCE_FENCE_POINT_PROTOCOL_SUPPORT
     /*
@@ -364,7 +364,7 @@ private:
     // contains_compatible_fence - returns true if the permanent fence
     // storage contains fences that are compatible with the old
     // FENCE_POINT protocol.
-    bool contains_compatible_fence() const WARN_IF_UNUSED;
+    bool contains_compatible_fence() const;
 
     // get_or_create_include_fence - returns a point to an include
     // fence to be used for the FENCE_POINT-supplied polygon.  May
@@ -377,9 +377,9 @@ private:
 #endif
 
     // primitives to write parts of fencepoints out:
-    bool write_type_to_storage(uint16_t &offset, AC_PolyFenceType type) WARN_IF_UNUSED;
-    bool write_latlon_to_storage(uint16_t &offset, const Vector2l &latlon) WARN_IF_UNUSED;
-    bool read_latlon_from_storage(uint16_t &read_offset, Vector2l &latlon) const WARN_IF_UNUSED;
+    bool write_type_to_storage(uint16_t &offset, AC_PolyFenceType type);
+    bool write_latlon_to_storage(uint16_t &offset, const Vector2l &latlon);
+    bool read_latlon_from_storage(uint16_t &read_offset, Vector2l &latlon) const;
 
     // methods to write specific types of fencepoint out:
     bool write_eos_to_storage(uint16_t &offset);
@@ -396,7 +396,7 @@ private:
     // scan fails (for example, the storage is corrupt), then this
     // method will return false.
     FUNCTOR_TYPEDEF(scan_fn_t, void, const AC_PolyFenceType, uint16_t);
-    bool scan_eeprom(scan_fn_t scan_fn) WARN_IF_UNUSED;
+    bool scan_eeprom(scan_fn_t scan_fn);
     // scan_eeprom_count_fences - a static function designed to be
     // massed to scan_eeprom which counts the number of fences and
     // fence items present.  The results of this counting appear in _eeprom_fence_count and _eeprom_item_count
@@ -423,9 +423,9 @@ private:
     uint16_t _num_fences;
 
     // count_eeprom_fences - refresh the count of fences in permanent storage
-    bool count_eeprom_fences() WARN_IF_UNUSED;
+    bool count_eeprom_fences();
     // index_eeprom - (re)allocate and fill in _index
-    bool index_eeprom() WARN_IF_UNUSED;
+    bool index_eeprom();
 
     uint16_t fence_storage_space_required(const AC_PolyFenceItem *new_items, uint16_t count);
 

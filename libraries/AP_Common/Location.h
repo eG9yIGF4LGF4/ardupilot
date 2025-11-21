@@ -41,7 +41,7 @@ public:
     // - above-terrain and the terrain database can't supply terrain height amsl
     // - above-home and home is not set
     // - above-origin and origin is not set
-    bool get_alt_cm(AltFrame desired_frame, int32_t &ret_alt_cm) const WARN_IF_UNUSED;
+    bool get_alt_cm(AltFrame desired_frame, int32_t &ret_alt_cm) const;
 
     // get altitude frame
     AltFrame get_alt_frame() const;
@@ -57,14 +57,14 @@ public:
     // return false on failure to get the vector which can only
     // happen if the EKF origin has not been set yet
     // x, y and z are in centimetres
-    bool get_vector_xy_from_origin_NE(Vector2f &vec_ne) const WARN_IF_UNUSED;
-    bool get_vector_from_origin_NEU(Vector3f &vec_neu) const WARN_IF_UNUSED;
+    bool get_vector_xy_from_origin_NE(Vector2f &vec_ne) const;
+    bool get_vector_from_origin_NEU(Vector3f &vec_neu) const;
 
     // return horizontal distance in meters between two locations
     ftype get_distance(const Location &loc2) const;
 
     // return the altitude difference in meters taking into account alt frame.
-    bool get_alt_distance(const Location &loc2, ftype &distance) const WARN_IF_UNUSED;
+    bool get_alt_distance(const Location &loc2, ftype &distance) const;
 
     // return the distance in meters in North/East/Down plane as a N/E/D vector to loc2
     // NOT CONSIDERING ALT FRAME!
@@ -95,7 +95,7 @@ public:
     // longitude/latitude points to meters or centimeters
     static ftype longitude_scale(int32_t lat);
 
-    bool is_zero(void) const WARN_IF_UNUSED;
+    bool is_zero(void) const;
 
     void zero(void);
 

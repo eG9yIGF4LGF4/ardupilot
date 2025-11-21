@@ -21,7 +21,7 @@ class AP_Frsky_MAVlite_SPortToMAVlite {
 public:
 
     bool process(AP_Frsky_MAVlite_Message &rxmsg,
-                 const AP_Frsky_SPort::sport_packet_t &packet) WARN_IF_UNUSED;
+                 const AP_Frsky_SPort::sport_packet_t &packet);
 
 private:
 

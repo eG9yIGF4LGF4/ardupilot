@@ -156,7 +156,7 @@ private:
     // "update_boundary" method manipulates two sectors ccw and one sector cw from any valid face.
     // Any boundary that does not fall into these manipulated faces are useless, and will be marked as false
     // The resultant is packed into a Boundary Location object and returned by reference as "face"
-    bool convert_obstacle_num_to_face(uint8_t obstacle_num, Face& face) const WARN_IF_UNUSED;
+    bool convert_obstacle_num_to_face(uint8_t obstacle_num, Face& face) const;
 
     // Apply a new cutoff_freq to low-pass filter
     void apply_filter_freq(float cutoff_freq);

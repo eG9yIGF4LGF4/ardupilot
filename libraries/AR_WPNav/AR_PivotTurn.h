@@ -34,7 +34,7 @@ public:
 
     // check if pivot turn would be activated given an expected change in yaw in degrees
     // note this does not actually active the pivot turn.  To activate use the check_activation method
-    bool would_activate(float yaw_change_deg) const WARN_IF_UNUSED;
+    bool would_activate(float yaw_change_deg) const;
 
     // forcibly deactivate this controller
     void deactivate() { _active = false; };

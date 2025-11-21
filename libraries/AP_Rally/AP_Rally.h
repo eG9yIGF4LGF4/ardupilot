@@ -67,7 +67,7 @@ public:
     // reduce point count:
     void truncate(uint8_t num);
     // append a rally point to the list
-    bool append(const RallyLocation &loc) WARN_IF_UNUSED;
+    bool append(const RallyLocation &loc);
 
     float get_rally_limit_km() const { return _rally_limit_km; }
 

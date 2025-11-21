@@ -61,7 +61,7 @@ public:
 
     /// update - update circle controller
     ///     returns false on failure which indicates a terrain failsafe
-    bool update(float climb_rate_cms = 0.0f) WARN_IF_UNUSED;
+    bool update(float climb_rate_cms = 0.0f);
 
     /// get desired roll, pitch which should be fed into stabilize controllers
     float get_roll() const { return _pos_control.get_roll_cd(); }

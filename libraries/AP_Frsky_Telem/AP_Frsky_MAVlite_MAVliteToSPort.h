@@ -27,7 +27,7 @@ public:
 
     // insert sport packets calculated from mavlite msg into queue
     bool process(ObjectBuffer_TS<AP_Frsky_SPort::sport_packet_t> &queue,
-                 const AP_Frsky_MAVlite_Message &msg) WARN_IF_UNUSED;
+                 const AP_Frsky_MAVlite_Message &msg);
 
 private:
 

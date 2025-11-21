@@ -121,14 +121,14 @@ public:
     }
     
     // re-initialise storage, using current mem_buffer
-    bool re_initialise(void) WARN_IF_UNUSED;
+    bool re_initialise(void);
     
     // switch full sector - should only be called when safe to have CPU
     // offline for considerable periods as an erase will be needed
-    bool switch_full_sector(void) WARN_IF_UNUSED;
+    bool switch_full_sector(void);
 
     // write some data to storage from mem_buffer
-    bool write(uint16_t offset, uint16_t length) WARN_IF_UNUSED;
+    bool write(uint16_t offset, uint16_t length);
 
     // fixed storage size
     static const uint16_t storage_size = HAL_STORAGE_SIZE;
@@ -218,27 +218,27 @@ private:
     static const uint32_t reserve_size = (storage_size / max_write) * (sizeof(block_header) + max_write) + max_write;
         
     // load data from a sector
-    bool load_sector(uint8_t sector) WARN_IF_UNUSED;
+    bool load_sector(uint8_t sector);
 
     // erase a sector and write header
-    bool erase_sector(uint8_t sector, bool mark_available) WARN_IF_UNUSED;
+    bool erase_sector(uint8_t sector, bool mark_available);
 
     // erase all sectors and reset
-    bool erase_all() WARN_IF_UNUSED;
+    bool erase_all();
 
     // write all of mem_buffer to current sector
-    bool write_all() WARN_IF_UNUSED;
+    bool write_all();
 
     // return true if all bytes are zero
-    bool all_zero(uint16_t ofs, uint16_t size) WARN_IF_UNUSED;
+    bool all_zero(uint16_t ofs, uint16_t size);
 
     // switch to next sector for writing
-    bool switch_sectors(void) WARN_IF_UNUSED;
+    bool switch_sectors(void);
 
     // _switch_full_sector is protected by switch_full_sector to avoid
     // an infinite recursion problem; switch_full_sector calls
     // write() which can call switch_full_sector.  This has been seen
     // in practice.
-    bool protected_switch_full_sector(void) WARN_IF_UNUSED;
+    bool protected_switch_full_sector(void);
     bool in_switch_full_sector;
 };

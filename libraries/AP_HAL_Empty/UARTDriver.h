@@ -21,7 +21,7 @@ public:
 protected:
     void _begin(uint32_t b, uint16_t rxS, uint16_t txS) override;
     size_t _write(const uint8_t *buffer, size_t size) override;
-    ssize_t _read(uint8_t *buffer, uint16_t size) override WARN_IF_UNUSED;
+    ssize_t _read(uint8_t *buffer, uint16_t size) override;
     void _end() override;
     void _flush() override;
     uint32_t _available() override;

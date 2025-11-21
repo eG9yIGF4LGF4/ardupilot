@@ -81,7 +81,7 @@ private:
     bool connected{false};
 
     static void update_topic(builtin_interfaces_msg_Time& msg);
-    bool update_topic(sensor_msgs_msg_NavSatFix& msg, const uint8_t instance) WARN_IF_UNUSED;
+    bool update_topic(sensor_msgs_msg_NavSatFix& msg, const uint8_t instance);
     static void populate_static_transforms(tf2_msgs_msg_TFMessage& msg);
     static void update_topic(sensor_msgs_msg_BatteryState& msg, const uint8_t instance);
     static void update_topic(geometry_msgs_msg_PoseStamped& msg);
@@ -162,16 +162,16 @@ public:
 
     //! @brief Initialize the client's transport
     //! @return True on successful initialization, false on failure
-    bool init_transport() WARN_IF_UNUSED;
+    bool init_transport();
 
     //! @brief Initialize the client's uxr session and IO stream(s)
     //! @return True on successful initialization, false on failure
-    bool init_session() WARN_IF_UNUSED;
+    bool init_session();
 
     //! @brief Set up the client's participants, data read/writes,
     //         publishers, subscribers
     //! @return True on successful creation, false on failure
-    bool create() WARN_IF_UNUSED;
+    bool create();
 
     //! @brief Serialize the current time state and publish to the IO stream(s)
     void write_time_topic();

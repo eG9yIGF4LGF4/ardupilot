@@ -254,7 +254,7 @@ public:
     // Retrieve the first instance ID that is configured as type GPS_TYPE_EXTERNAL_AHRS.
     // Can be used by external AHRS systems that only report one GPS to get the instance ID.
     // Returns true if an instance was found, false otherwise.
-    bool get_first_external_instance(uint8_t& instance) const WARN_IF_UNUSED;
+    bool get_first_external_instance(uint8_t& instance) const;
     void handle_external(const AP_ExternalAHRS::gps_data_message_t &pkt, const uint8_t instance);
 #endif
 
@@ -306,7 +306,7 @@ public:
     }
 
     // Query the highest status this GPS supports (always reports GPS_OK_FIX_3D for the blended GPS)
-    GPS_Status highest_supported_status(uint8_t instance) const WARN_IF_UNUSED;
+    GPS_Status highest_supported_status(uint8_t instance) const;
 
     // location of last fix
     const Location &location(uint8_t instance) const {
@@ -342,7 +342,7 @@ public:
         return vertical_accuracy(primary_instance, vacc);
     }
 
-    CovarianceType position_covariance(const uint8_t instance, Matrix3f& cov) const WARN_IF_UNUSED;
+    CovarianceType position_covariance(const uint8_t instance, Matrix3f& cov) const;
 
     // 3D velocity in NED format
     const Vector3f &velocity(uint8_t instance) const {
@@ -495,7 +495,7 @@ public:
     void send_mavlink_gps_rtk(mavlink_channel_t chan, uint8_t inst);
 
     // Returns true if there is an unconfigured GPS, and provides the instance number of the first non configured GPS
-    bool first_unconfigured_gps(uint8_t &instance) const WARN_IF_UNUSED;
+    bool first_unconfigured_gps(uint8_t &instance) const;
     void broadcast_first_configuration_failure_reason(void) const;
 
     // pre-arm check that all GPSs are close to each other.  farthest distance between GPSs (in meters) is returned

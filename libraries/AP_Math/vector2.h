@@ -106,10 +106,10 @@ struct Vector2
     T angle(void) const;
 
     // check if any elements are NAN
-    bool is_nan(void) const WARN_IF_UNUSED;
+    bool is_nan(void) const;
 
     // check if any elements are infinity
-    bool is_inf(void) const WARN_IF_UNUSED;
+    bool is_inf(void) const;
 
     // check if all elements are zero
     bool is_zero(void) const WARN_IF_UNUSED {
@@ -234,11 +234,11 @@ struct Vector2
     // find the intersection between two line segments
     // returns true if they intersect, false if they do not
     // the point of intersection is returned in the intersection argument
-    static bool segment_intersection(const Vector2<T>& seg1_start, const Vector2<T>& seg1_end, const Vector2<T>& seg2_start, const Vector2<T>& seg2_end, Vector2<T>& intersection) WARN_IF_UNUSED;
+    static bool segment_intersection(const Vector2<T>& seg1_start, const Vector2<T>& seg1_end, const Vector2<T>& seg2_start, const Vector2<T>& seg2_end, Vector2<T>& intersection);
 
     // find the intersection between a line segment and a circle
     // returns true if they intersect and intersection argument is updated with intersection closest to seg_start
-    static bool circle_segment_intersection(const Vector2<T>& seg_start, const Vector2<T>& seg_end, const Vector2<T>& circle_center, T radius, Vector2<T>& intersection) WARN_IF_UNUSED;
+    static bool circle_segment_intersection(const Vector2<T>& seg_start, const Vector2<T>& seg_end, const Vector2<T>& circle_center, T radius, Vector2<T>& intersection);
 
     // check if a point falls on the line segment from seg_start to seg_end
     static bool point_on_segment(const Vector2<T>& point,

@@ -52,7 +52,7 @@ public:
       single and multi-byte read methods
      */
     int16_t read(void) override;
-    bool read(uint8_t &b) override WARN_IF_UNUSED;
+    bool read(uint8_t &b) override;
     ssize_t read(uint8_t *buffer, uint16_t count) override;
     
     void end();
@@ -76,7 +76,7 @@ public:
     size_t write_locked(const uint8_t *buffer, size_t size, uint32_t key);
 
     // read buffer from a locked port. If port is locked and key is not correct then -1 is returned
-    ssize_t read_locked(uint8_t *buf, size_t count, uint32_t key) WARN_IF_UNUSED;
+    ssize_t read_locked(uint8_t *buf, size_t count, uint32_t key);
     
     // control optional features
     virtual bool set_options(uint16_t options) { _last_options = options; return options==0; }

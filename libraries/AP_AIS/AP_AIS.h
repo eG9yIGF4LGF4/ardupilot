@@ -98,16 +98,16 @@ private:
     void buffer_shift(uint8_t i);
 
     // find vessel in existing list, if not then return new index if possible
-    bool get_vessel_index(uint32_t mmsi, uint16_t &index, uint32_t lat = 0, uint32_t lon = 0) WARN_IF_UNUSED;
+    bool get_vessel_index(uint32_t mmsi, uint16_t &index, uint32_t lat = 0, uint32_t lon = 0);
     void clear_list_item(uint16_t index);
 
     // decode the payload
-    bool payload_decode(const char *payload) WARN_IF_UNUSED;
+    bool payload_decode(const char *payload);
 
     // decode specific message types
-    bool decode_position_report(const char *payload, uint8_t type) WARN_IF_UNUSED;
-    bool decode_base_station_report(const char *payload) WARN_IF_UNUSED;
-    bool decode_static_and_voyage_data(const char *payload) WARN_IF_UNUSED;
+    bool decode_position_report(const char *payload, uint8_t type);
+    bool decode_base_station_report(const char *payload);
+    bool decode_static_and_voyage_data(const char *payload);
 
     // read the specified bits from the char array each char giving 6 bits
     void get_char(const char *payload, char *array, uint16_t low, uint16_t high);
@@ -120,10 +120,10 @@ private:
     void log_raw(const AIVDM *msg);
 
     // try and decode NMEA message
-    bool decode(char c) WARN_IF_UNUSED;
+    bool decode(char c);
 
     // decode each term
-    bool decode_latest_term() WARN_IF_UNUSED;
+    bool decode_latest_term();
 
     // variables for decoding NMEA sentence
     char _term[AIVDM_PAYLOAD_SIZE]; // buffer for the current term within the current sentence

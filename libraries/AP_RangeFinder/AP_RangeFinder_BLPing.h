@@ -138,7 +138,7 @@ public:
      * 100 is best quality, 0 is worst
      *
      */
-    int8_t get_signal_quality_pct() const override WARN_IF_UNUSED;
+    int8_t get_signal_quality_pct() const override;
 
 protected:
     /**

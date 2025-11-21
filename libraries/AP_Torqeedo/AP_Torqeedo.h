@@ -82,7 +82,7 @@ public:
     void clear_motor_error() { _motor_clear_error = true; }
 
     // get latest battery status info.  returns true on success and populates arguments
-    bool get_batt_info(float &voltage, float &current_amps, float &temp_C, uint8_t &pct_remaining) const WARN_IF_UNUSED;
+    bool get_batt_info(float &voltage, float &current_amps, float &temp_C, uint8_t &pct_remaining) const;
     bool get_batt_capacity_Ah(uint16_t &amp_hours) const;
 
     static const struct AP_Param::GroupInfo var_info[];

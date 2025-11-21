@@ -180,10 +180,10 @@ public:
     T angle(const Vector3<T> &v2) const;
 
     // check if any elements are NAN
-    bool is_nan(void) const WARN_IF_UNUSED;
+    bool is_nan(void) const;
 
     // check if any elements are infinity
-    bool is_inf(void) const WARN_IF_UNUSED;
+    bool is_inf(void) const;
 
     // check if all elements are zero
     bool is_zero(void) const WARN_IF_UNUSED {

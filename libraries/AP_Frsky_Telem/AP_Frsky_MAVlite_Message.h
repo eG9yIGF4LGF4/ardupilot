@@ -17,8 +17,8 @@ public:
         return set_bytes((uint8_t*)&value, offset, 4);
     }
 
-    bool get_string(char* value, const uint8_t offset) const WARN_IF_UNUSED;
-    bool set_string(const char* value, const uint8_t offset) WARN_IF_UNUSED;
+    bool get_string(char* value, const uint8_t offset) const;
+    bool set_string(const char* value, const uint8_t offset);
 
     bool get_uint16(uint16_t &value, const uint8_t offset) const WARN_IF_UNUSED {
         return get_bytes((uint8_t*)&value, offset, 2);
@@ -42,7 +42,7 @@ public:
     static uint8_t bit8_unpack(const uint8_t value, const  uint8_t bit_count, const uint8_t bit_offset);
 
 private:
-    bool get_bytes(uint8_t *bytes, const uint8_t offset, const uint8_t count) const WARN_IF_UNUSED;
-    bool set_bytes(const uint8_t *bytes,  const uint8_t offset, const uint8_t count) WARN_IF_UNUSED;
+    bool get_bytes(uint8_t *bytes, const uint8_t offset, const uint8_t count) const;
+    bool set_bytes(const uint8_t *bytes,  const uint8_t offset, const uint8_t count);
 };
 #endif

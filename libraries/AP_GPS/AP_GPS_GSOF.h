@@ -34,7 +34,7 @@ public:
     }
 
     // Methods
-    bool read() override WARN_IF_UNUSED;
+    bool read() override;
 
     const char *name() const override { return "GSOF"; }
 
@@ -56,8 +56,8 @@ private:
         FREQ_100_HZ = 16,
     };
 
-    bool parse(const uint8_t temp) WARN_IF_UNUSED;
-    bool process_message() WARN_IF_UNUSED;
+    bool parse(const uint8_t temp);
+    bool process_message();
 
     // Send a request to the GPS to set the baud rate on the specified port.
     // Note - these request functions currently ignore the ACK from the device.
@@ -67,13 +67,13 @@ private:
     // Send a request to the GPS to enable a message type on the port at the specified rate.
     void requestGSOF(const uint8_t messageType, const HW_Port portIndex, const Output_Rate rateHz);
 
-    double SwapDouble(const uint8_t* src, const uint32_t pos) const WARN_IF_UNUSED;
-    float SwapFloat(const uint8_t* src, const uint32_t pos) const WARN_IF_UNUSED;
-    uint32_t SwapUint32(const uint8_t* src, const uint32_t pos) const WARN_IF_UNUSED;
-    uint16_t SwapUint16(const uint8_t* src, const uint32_t pos) const WARN_IF_UNUSED;
+    double SwapDouble(const uint8_t* src, const uint32_t pos) const;
+    float SwapFloat(const uint8_t* src, const uint32_t pos) const;
+    uint32_t SwapUint32(const uint8_t* src, const uint32_t pos) const;
+    uint16_t SwapUint16(const uint8_t* src, const uint32_t pos) const;
 
-    bool validate_baud(const uint8_t baud) const WARN_IF_UNUSED;
-    bool validate_com_port(const uint8_t com_port) const WARN_IF_UNUSED;
+    bool validate_baud(const uint8_t baud) const;
+    bool validate_com_port(const uint8_t com_port) const;
 
     struct Msg_Parser
     {

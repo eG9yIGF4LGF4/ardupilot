@@ -98,7 +98,7 @@ protected:
     void _flush() override;
     uint32_t _available() override;
     size_t _write(const uint8_t *buffer, size_t size) override;
-    ssize_t _read(uint8_t *buffer, uint16_t count) override WARN_IF_UNUSED;
+    ssize_t _read(uint8_t *buffer, uint16_t count) override;
 };
 
 }

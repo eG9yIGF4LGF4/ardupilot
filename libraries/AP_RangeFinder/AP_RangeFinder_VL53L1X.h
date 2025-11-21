@@ -1280,17 +1280,17 @@ private:
     uint32_t counter;
     bool calibrated;
 
-    bool read_register(uint16_t reg, uint8_t &value) WARN_IF_UNUSED;
-    bool read_register16(uint16_t reg, uint16_t &value) WARN_IF_UNUSED;
-    bool write_register(uint16_t reg, uint8_t value) WARN_IF_UNUSED;
-    bool write_register16(uint16_t reg, uint16_t value) WARN_IF_UNUSED;
-    bool write_register32(uint16_t reg, uint32_t value) WARN_IF_UNUSED;
+    bool read_register(uint16_t reg, uint8_t &value);
+    bool read_register16(uint16_t reg, uint16_t &value);
+    bool write_register(uint16_t reg, uint8_t value);
+    bool write_register16(uint16_t reg, uint16_t value);
+    bool write_register32(uint16_t reg, uint32_t value);
     bool dataReady(void);
-    bool reset(void) WARN_IF_UNUSED;
-    bool setDistanceMode(DistanceMode distance_mode) WARN_IF_UNUSED;
-    bool setMeasurementTimingBudget(uint32_t budget_us) WARN_IF_UNUSED;
-    bool getMeasurementTimingBudget(uint32_t &budget) WARN_IF_UNUSED;
-    bool startContinuous(uint32_t period_ms) WARN_IF_UNUSED;
+    bool reset(void);
+    bool setDistanceMode(DistanceMode distance_mode);
+    bool setMeasurementTimingBudget(uint32_t budget_us);
+    bool getMeasurementTimingBudget(uint32_t &budget);
+    bool startContinuous(uint32_t period_ms);
     uint32_t decodeTimeout(uint16_t reg_val);
     uint16_t encodeTimeout(uint32_t timeout_mclks);
     uint32_t timeoutMclksToMicroseconds(uint32_t timeout_mclks, uint32_t macro_period_us);

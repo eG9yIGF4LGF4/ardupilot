@@ -109,7 +109,7 @@ public:
 
     // set desired location (used in Guided, Auto)
     // set next_destination (if known).  If not provided vehicle stops at destination
-    virtual bool set_desired_location(const Location &destination, Location next_destination = Location()) WARN_IF_UNUSED;
+    virtual bool set_desired_location(const Location &destination, Location next_destination = Location());
 
     // true if vehicle has reached desired location. defaults to true because this is normally used by missions and we do not want the mission to become stuck
     virtual bool reached_destination() const { return true; }
@@ -263,8 +263,8 @@ public:
     float get_distance_to_destination() const override;
 
     // get or set desired location
-    bool get_desired_location(Location& destination) const override WARN_IF_UNUSED;
-    bool set_desired_location(const Location &destination, Location next_destination = Location()) override WARN_IF_UNUSED;
+    bool get_desired_location(Location& destination) const override;
+    bool set_desired_location(const Location &destination, Location next_destination = Location()) override;
     bool reached_destination() const override;
 
     // set desired speed in m/s
@@ -430,7 +430,7 @@ public:
     float get_distance_to_destination() const override { return _distance_to_destination; }
 
     // get or set desired location
-    bool get_desired_location(Location& destination) const override WARN_IF_UNUSED;
+    bool get_desired_location(Location& destination) const override;
 
     // return total angle in radians that vehicle has circled
     // fabsf is used so that full rotations in either direction are counted
@@ -520,8 +520,8 @@ public:
     bool set_desired_speed(float speed) override;
 
     // get or set desired location
-    bool get_desired_location(Location& destination) const override WARN_IF_UNUSED;
-    bool set_desired_location(const Location &destination, Location next_destination = Location()) override WARN_IF_UNUSED;
+    bool get_desired_location(Location& destination) const override;
+    bool set_desired_location(const Location &destination, Location next_destination = Location()) override;
 
     // set desired heading and speed
     void set_desired_heading_and_speed(float yaw_angle_cd, float target_speed);
@@ -629,7 +629,7 @@ public:
     float crosstrack_error() const override { return 0.0f; }
 
     // return desired location
-    bool get_desired_location(Location& destination) const override WARN_IF_UNUSED;
+    bool get_desired_location(Location& destination) const override;
 
     // return distance (in meters) to destination
     float get_distance_to_destination() const override { return _distance_to_destination; }
@@ -683,7 +683,7 @@ public:
     bool allows_arming() const override { return false; }
 
     // return desired location
-    bool get_desired_location(Location& destination) const override WARN_IF_UNUSED;
+    bool get_desired_location(Location& destination) const override;
 
     // return distance (in meters) to destination
     float get_distance_to_destination() const override { return _distance_to_destination; }
@@ -718,7 +718,7 @@ public:
     bool allows_arming() const override { return false; }
 
     // return desired location
-    bool get_desired_location(Location& destination) const override WARN_IF_UNUSED;
+    bool get_desired_location(Location& destination) const override;
 
     // return distance (in meters) to destination
     float get_distance_to_destination() const override { return _distance_to_destination; }

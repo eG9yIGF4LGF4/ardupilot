@@ -59,7 +59,7 @@ protected:
 
     // returns the rate limited by the maximum acceleration
     // this also updates the previous rate so should not be called more than once per loop
-    float get_rate_limited_by_accel(float rate, float dt) WARN_IF_UNUSED;
+    float get_rate_limited_by_accel(float rate, float dt);
 
     // set the rate used for acceleration limiting
     void set_previous_rate(float rate) { previous_rate = rate; }

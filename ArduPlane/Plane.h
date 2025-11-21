@@ -982,7 +982,7 @@ private:
     void update_current_loc(void);
 
     // set home location and store it persistently:
-    bool set_home_persistently(const Location &loc) WARN_IF_UNUSED;
+    bool set_home_persistently(const Location &loc);
 
     // control_modes.cpp
     void read_control_switch();

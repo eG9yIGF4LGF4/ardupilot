@@ -113,7 +113,7 @@ void mat_mul(const T *A, const T *B, T *C, uint16_t n);
 
 // matrix inverse
 template <typename T>
-bool mat_inverse(const T *x, T *y, uint16_t dim) WARN_IF_UNUSED;
+bool mat_inverse(const T *x, T *y, uint16_t dim);
 
 // matrix identity
 template <typename T>
@@ -329,7 +329,7 @@ float rand_float(void);
 Vector3f rand_vec3f(void);
 
 // return true if two rotations are equal
-bool rotation_equal(enum Rotation r1, enum Rotation r2) WARN_IF_UNUSED;
+bool rotation_equal(enum Rotation r1, enum Rotation r2);
 
 /*
  * return a velocity correction (in m/s in NED) for a sensor's position given it's position offsets
@@ -378,14 +378,14 @@ int32_t double_to_int32(const double v);
 /*
   Convert from float to int32_t without breaking Wstrict-aliasing due to type punning
 */
-int32_t float_to_int32_le(const float& value) WARN_IF_UNUSED;
+int32_t float_to_int32_le(const float& value);
 
 /*
   Convert from uint32_t to float without breaking Wstrict-aliasing due to type punning
 */
-float int32_to_float_le(const uint32_t& value) WARN_IF_UNUSED;
+float int32_to_float_le(const uint32_t& value);
 
 /*
   Convert from uint64_t to double without breaking Wstrict-aliasing due to type punning
 */
-double uint64_to_double_le(const uint64_t& value) WARN_IF_UNUSED;
+double uint64_to_double_le(const uint64_t& value);

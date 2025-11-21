@@ -61,7 +61,7 @@ public:
     void            reset() override { return; }
 
     // get latest altitude estimate above ground level in meters and validity flag
-    bool get_hagl(float &hagl) const override WARN_IF_UNUSED;
+    bool get_hagl(float &hagl) const override;
 
     // return a wind estimation vector, in m/s
     bool wind_estimate(Vector3f &wind) const override;
@@ -80,7 +80,7 @@ public:
     bool            use_compass() override { return true; }
 
     // return the quaternion defining the rotation from NED to XYZ (body) axes
-    bool get_quaternion(Quaternion &quat) const override WARN_IF_UNUSED;
+    bool get_quaternion(Quaternion &quat) const override;
 
     // is the AHRS subsystem healthy?
     bool healthy() const override { return true; }

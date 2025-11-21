@@ -24,7 +24,7 @@ class AP_Mission_ChangeDetector
 public:
 
     // check for changes to mission. returns true if mission has been changed since last check
-    bool check_for_mission_change() WARN_IF_UNUSED;
+    bool check_for_mission_change();
 
 private:
 

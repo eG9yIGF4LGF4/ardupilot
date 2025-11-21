@@ -41,7 +41,7 @@ public:
     bool has_temperature() const override { return have_info; };
 
     // capacity_remaining_pct - returns true if the battery % is available and writes to the percentage argument
-    bool capacity_remaining_pct(uint8_t &percentage) const override WARN_IF_UNUSED;
+    bool capacity_remaining_pct(uint8_t &percentage) const override;
 
 private:
 

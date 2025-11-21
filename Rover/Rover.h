@@ -301,8 +301,8 @@ private:
     bool is_balancebot() const;
 
     // commands.cpp
-    bool set_home_to_current_location(bool lock) WARN_IF_UNUSED;
-    bool set_home(const Location& loc, bool lock) WARN_IF_UNUSED;
+    bool set_home_to_current_location(bool lock);
+    bool set_home(const Location& loc, bool lock);
     void update_home();
 
     // crash_check.cpp

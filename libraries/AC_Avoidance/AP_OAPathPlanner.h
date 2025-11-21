@@ -59,7 +59,7 @@ public:
                            Location &result_destination,
                            Location &result_next_destination,
                            bool &result_dest_to_next_dest_clear,
-                           OAPathPlannerUsed &path_planner_used) WARN_IF_UNUSED;
+                           OAPathPlannerUsed &path_planner_used);
 
     // enumerations for _TYPE parameter
     enum OAPathPlanTypes {

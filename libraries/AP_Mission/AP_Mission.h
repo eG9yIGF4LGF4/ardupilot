@@ -644,9 +644,9 @@ public:
     void write_home_to_storage();
 
     static MAV_MISSION_RESULT convert_MISSION_ITEM_to_MISSION_ITEM_INT(const mavlink_mission_item_t &mission_item,
-            mavlink_mission_item_int_t &mission_item_int) WARN_IF_UNUSED;
+            mavlink_mission_item_int_t &mission_item_int);
     static MAV_MISSION_RESULT convert_MISSION_ITEM_INT_to_MISSION_ITEM(const mavlink_mission_item_int_t &mission_item_int,
-            mavlink_mission_item_t &mission_item) WARN_IF_UNUSED;
+            mavlink_mission_item_t &mission_item);
 
     // mavlink_int_to_mission_cmd - converts mavlink message to an AP_Mission::Mission_Command object which can be stored to eeprom
     //  return MAV_MISSION_ACCEPTED on success, MAV_MISSION_RESULT error on failure

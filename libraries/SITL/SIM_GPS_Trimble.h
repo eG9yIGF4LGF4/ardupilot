@@ -140,8 +140,8 @@ private:
 
     // These packing utilities for GSOF perform a type-safe floating point byteswap.
     // They return integer types because returning floating points would involve an extra copy.
-    uint64_t gsof_pack_double(const double& src) WARN_IF_UNUSED;
-    uint32_t gsof_pack_float(const float& src) WARN_IF_UNUSED;
+    uint64_t gsof_pack_double(const double& src);
+    uint32_t gsof_pack_float(const float& src);
 };
 
 };

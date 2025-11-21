@@ -400,8 +400,8 @@ private:
     int16_t pwm_to_range() const;
     int16_t pwm_to_range_dz(uint16_t dead_zone) const;
 
-    bool read_3pos_switch(AuxSwitchPos &ret) const WARN_IF_UNUSED;
-    bool read_6pos_switch(int8_t& position) WARN_IF_UNUSED;
+    bool read_3pos_switch(AuxSwitchPos &ret) const;
+    bool read_6pos_switch(int8_t& position);
 
     // Structure used to detect and debounce switch changes
     struct {
