@@ -105,6 +105,7 @@ mission.stg
 /Rover/defaults.parm
 mk/PX4/ROMFS/default.parm
 module.mk
+modules/ 
 serialsent.raw
 status.txt
 tags
