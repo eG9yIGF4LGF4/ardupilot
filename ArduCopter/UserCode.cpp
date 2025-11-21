@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 #include <AP_VideoTX/AP_VideoTX_CLI.h>
->>>>>>> b49cf6496a (intermediate commit)
 #include "Copter.h"
 
 #ifdef USERHOOK_INIT
@@ -46,13 +43,6 @@ void Copter::userhook_SuperSlowLoop()
 }
 #endif
 
-#ifdef USERHOOK_AUXSWITCH
-<<<<<<< HEAD
-void Copter::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag)
-{
-    // put your aux switch #1 handler here (CHx_OPT = 47)
-=======
-
 void Copter::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag) 
 {
     #if AP_VTX_CLI_ENABLED
@@ -61,23 +51,16 @@ void Copter::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag)
     cli->set_parameters();
 
     #endif
->>>>>>> b49cf6496a (intermediate commit)
 }
 
 void Copter::userhook_auxSwitch2(const RC_Channel::AuxSwitchPos ch_flag)
 {
-<<<<<<< HEAD
-    // put your aux switch #2 handler here (CHx_OPT = 48)
-=======
->>>>>>> b49cf6496a (intermediate commit)
+
 }
 
 void Copter::userhook_auxSwitch3(const RC_Channel::AuxSwitchPos ch_flag)
 {
-<<<<<<< HEAD
-    // put your aux switch #3 handler here (CHx_OPT = 49)
-=======
->>>>>>> b49cf6496a (intermediate commit)
+
 }
 
 #endif
