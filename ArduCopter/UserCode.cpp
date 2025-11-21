@@ -62,5 +62,3 @@ void Copter::userhook_auxSwitch3(const RC_Channel::AuxSwitchPos ch_flag)
 {
 
 }
-
-#endif

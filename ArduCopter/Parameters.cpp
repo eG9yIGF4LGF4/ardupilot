@@ -78,7 +78,7 @@ const AP_Param::Info Copter::var_info[] = {
 
     // @Group: SERIAL
     // @Path: ../libraries/AP_SerialManager/AP_SerialManager.cpp
-    GOBJECT(serial_manager, "SERIAL",   AP_SerialManager),
+    // GOBJECT(erial_manager, "SERIAL",   AP_SerialManager),
 
     // @Param: TELEM_DELAY
     // @DisplayName: Telemetry startup delay
@@ -524,11 +524,11 @@ const AP_Param::Info Copter::var_info[] = {
     GOBJECT(camera, "CAM", AP_Camera),
 #endif
 
-#if AP_RELAY_ENABLED
-    // @Group: RELAY
-    // @Path: ../libraries/AP_Relay/AP_Relay.cpp
-    GOBJECT(relay,                  "RELAY", AP_Relay),
-#endif
+// #if AP_RELAY_ENABLED
+//     // @Group: RELAY
+//     // @Path: ../libraries/AP_Relay/AP_Relay.cpp
+//     GOBJECT(relay,                  "RELAY", AP_Relay),
+// #endif
 
 #if PARACHUTE == ENABLED
     // @Group: CHUTE_

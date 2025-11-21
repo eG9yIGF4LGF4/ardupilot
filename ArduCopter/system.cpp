@@ -92,9 +92,9 @@ void Copter::init_ardupilot()
     // motors initialised so parameters can be sent
     ap.initialised_params = true;
 
-#if AP_RELAY_ENABLED
-    relay.init();
-#endif
+// #if AP_RELAY_ENABLED
+//     relay.init();
+// #endif
 
     /*
      *  setup the 'main loop is dead' check. Note that this relies on
@@ -104,7 +104,7 @@ void Copter::init_ardupilot()
 
     // Do GPS init
     gps.set_log_gps_bit(MASK_LOG_GPS);
-    gps.init(serial_manager);
+    // gps.init(serial_manager);
 
     AP::compass().set_log_bit(MASK_LOG_COMPASS);
     AP::compass().init();
@@ -145,7 +145,7 @@ void Copter::init_ardupilot()
 #endif
 
 #ifdef USERHOOK_INIT
-    USERHOOK_INIT
+    //USERHOOK_INIT
 #endif
 
     // read Baro pressure at ground

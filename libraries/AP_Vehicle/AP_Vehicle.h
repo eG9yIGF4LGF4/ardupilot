@@ -276,10 +276,10 @@ public:
      */
     virtual bool get_rate_ef_targets(Vector3f& rate_ef_targets) const { return false; }
 
-#if AP_AHRS_ENABLED
+//#if AP_AHRS_ENABLED
     virtual bool set_home_to_current_location(bool lock) WARN_IF_UNUSED { return false; }
     virtual bool set_home(const Location& loc, bool lock) WARN_IF_UNUSED { return false; }
-#endif
+//#endif
 #if AP_VIDEOTX_ENABLED
     AP_VideoTX vtx;
 #endif
