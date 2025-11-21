@@ -1,43 +1,43 @@
 #include <AP_VideoTX/AP_VideoTX_CLI.h>
-#include "Copter.h"
+#include "Plane.h"
 
 #ifdef USERHOOK_INIT
-void Copter::userhook_init()
+void Plane::userhook_init()
 {
     
 }
 #endif
 
 #ifdef USERHOOK_FASTLOOP
-void Copter::userhook_FastLoop()
+void Plane::userhook_FastLoop()
 {
     // put your 100Hz code here
 }
 #endif
 
 #ifdef USERHOOK_50HZLOOP
-void Copter::userhook_50Hz()
+void Plane::userhook_50Hz()
 {
     // put your 50Hz code here
 }
 #endif
 
 #ifdef USERHOOK_MEDIUMLOOP
-void Copter::userhook_MediumLoop()
+void Plane::userhook_MediumLoop()
 {
     // put your 10Hz code here
 }
 #endif
 
 #ifdef USERHOOK_SLOWLOOP
-void Copter::userhook_SlowLoop()
+void Plane::userhook_SlowLoop()
 {
     // put your 3.3Hz code here
 }
 #endif
 
 #ifdef USERHOOK_SUPERSLOWLOOP
-void Copter::userhook_SuperSlowLoop()
+void Plane::userhook_SuperSlowLoop()
 {
     // put your 1Hz code here
 }
@@ -45,7 +45,7 @@ void Copter::userhook_SuperSlowLoop()
 
 #ifdef USERHOOK_AUXSWITCH
 
-void Copter::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag) 
+void Plane::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag) 
 {
     #if AP_VTX_CLI_ENABLED
 
@@ -55,11 +55,11 @@ void Copter::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag)
     #endif
 }
 
-void Copter::userhook_auxSwitch2(const RC_Channel::AuxSwitchPos ch_flag)
+void Plane::userhook_auxSwitch2(const RC_Channel::AuxSwitchPos ch_flag)
 {
 }
 
-void Copter::userhook_auxSwitch3(const RC_Channel::AuxSwitchPos ch_flag)
+void Plane::userhook_auxSwitch3(const RC_Channel::AuxSwitchPos ch_flag)
 {
 }
 

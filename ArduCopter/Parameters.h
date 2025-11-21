@@ -389,6 +389,62 @@ public:
         // 511: reserved
         k_param_band_ch = 270,
         k_param_channel_ch,
+        
+        k_param_vtx_cli0_begin,
+        k_param_vtx_cli0_band,
+        k_param_vtx_cli0_channel,
+        k_param_vtx_cli0_power,
+        k_param_vtx_cli0_rc,
+        k_param_vtx_cli0_end,
+
+        k_param_vtx_cli1_begin,
+        k_param_vtx_cli1_band,
+        k_param_vtx_cli1_channel,
+        k_param_vtx_cli1_power,
+        k_param_vtx_cli1_rc,
+        k_param_vtx_cli1_end,
+
+        k_param_vtx_cli2_begin,
+        k_param_vtx_cli2_band,
+        k_param_vtx_cli2_channel,
+        k_param_vtx_cli2_power,
+        k_param_vtx_cli2_rc,
+        k_param_vtx_cli2_end,
+
+        k_param_vtx_cli3_begin,
+        k_param_vtx_cli3_band,
+        k_param_vtx_cli3_channel,
+        k_param_vtx_cli3_power,
+        k_param_vtx_cli3_rc,
+        k_param_vtx_cli3_end,
+
+        k_param_vtx_cli4_begin,
+        k_param_vtx_cli4_band,
+        k_param_vtx_cli4_channel,
+        k_param_vtx_cli4_power,
+        k_param_vtx_cli4_rc,
+        k_param_vtx_cli4_end,
+
+        k_param_vtx_cli5_begin,
+        k_param_vtx_cli5_band,
+        k_param_vtx_cli5_channel,
+        k_param_vtx_cli5_power,
+        k_param_vtx_cli5_rc,
+        k_param_vtx_cli5_end,
+
+        k_param_vtx_cli6_begin,
+        k_param_vtx_cli6_band,
+        k_param_vtx_cli6_channel,
+        k_param_vtx_cli6_power,
+        k_param_vtx_cli6_rc,
+        k_param_vtx_cli6_end,
+
+        k_param_vtx_cli7_begin,
+        k_param_vtx_cli7_band,
+        k_param_vtx_cli7_channel,
+        k_param_vtx_cli7_power,
+        k_param_vtx_cli7_rc,
+        k_param_vtx_cli7_end,
     };
 
     AP_Int16        format_version;
@@ -446,6 +502,62 @@ public:
 
     AP_Int8         band_ch;
     AP_Int8         channel_ch;
+
+    AP_Int16        vtx_cli0_begin;
+    AP_Int8         vtx_cli0_band;
+    AP_Int8         vtx_cli0_channel;
+    AP_Int16        vtx_cli0_power;
+    AP_Int8         vtx_cli0_rc;
+    AP_Int16        vtx_cli0_end;
+
+    AP_Int16        vtx_cli1_begin;
+    AP_Int8         vtx_cli1_band;
+    AP_Int8         vtx_cli1_channel;
+    AP_Int16        vtx_cli1_power;
+    AP_Int8         vtx_cli1_rc;
+    AP_Int16        vtx_cli1_end;
+
+    AP_Int16        vtx_cli2_begin;
+    AP_Int8         vtx_cli2_band;
+    AP_Int8         vtx_cli2_channel;
+    AP_Int16        vtx_cli2_power;
+    AP_Int8         vtx_cli2_rc;
+    AP_Int16        vtx_cli2_end;
+
+    AP_Int16        vtx_cli3_begin;
+    AP_Int8         vtx_cli3_band;
+    AP_Int8         vtx_cli3_channel;
+    AP_Int16        vtx_cli3_power;
+    AP_Int8         vtx_cli3_rc;
+    AP_Int16        vtx_cli3_end;
+
+    AP_Int16        vtx_cli4_begin;
+    AP_Int8         vtx_cli4_band;
+    AP_Int8         vtx_cli4_channel;
+    AP_Int16        vtx_cli4_power;
+    AP_Int8         vtx_cli4_rc;
+    AP_Int16        vtx_cli4_end;
+
+    AP_Int16        vtx_cli5_begin;
+    AP_Int8         vtx_cli5_band;
+    AP_Int8         vtx_cli5_channel;
+    AP_Int16        vtx_cli5_power;
+    AP_Int8         vtx_cli5_rc;
+    AP_Int16        vtx_cli5_end;
+
+    AP_Int16        vtx_cli6_begin;
+    AP_Int8         vtx_cli6_band;
+    AP_Int8         vtx_cli6_channel;
+    AP_Int16        vtx_cli6_power;
+    AP_Int8         vtx_cli6_rc;
+    AP_Int16        vtx_cli6_end;
+
+    AP_Int16        vtx_cli7_begin;
+    AP_Int8         vtx_cli7_band;
+    AP_Int8         vtx_cli7_channel;
+    AP_Int16        vtx_cli7_power;
+    AP_Int8         vtx_cli7_rc;
+    AP_Int16        vtx_cli7_end;
 
     // Misc
     //

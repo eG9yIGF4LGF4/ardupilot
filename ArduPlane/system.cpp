@@ -132,6 +132,10 @@ void Plane::init_ardupilot()
     mission.set_log_start_mission_item_bit(MASK_LOG_CMD);
 #endif
 
+#ifdef USERHOOK_INIT
+    userhook_init();
+#endif
+
     // initialise AP_Logger library
 #if HAL_LOGGING_ENABLED
     logger.setVehicle_Startup_Writer(

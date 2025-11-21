@@ -308,6 +308,9 @@ public:
     virtual bool set_home_to_current_location(bool lock) WARN_IF_UNUSED { return false; }
     virtual bool set_home(const Location& loc, bool lock) WARN_IF_UNUSED { return false; }
 #endif
+#if AP_VIDEOTX_ENABLED
+    AP_VideoTX vtx;
+#endif
 
 protected:
 
@@ -375,9 +378,6 @@ protected:
 
 #if HAL_GYROFFT_ENABLED
     AP_GyroFFT gyro_fft;
-#endif
-#if AP_VIDEOTX_ENABLED
-    AP_VideoTX vtx;
 #endif
 
 #if AP_SERIALMANAGER_ENABLED
