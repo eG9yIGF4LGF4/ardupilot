@@ -65,7 +65,7 @@ bool AP_VideoTX_CLI::initVtxCliCommandOptions()
 
             o->band = AP::param()->get(VTX_CLI_PARAM(i, "_BAND"), val) ? val : 0;
             o->begin = AP::param()->get(VTX_CLI_PARAM(i, "_BEGIN"), val) ? val : 0;
-            o->channel = AP::param()->get(VTX_CLI_PARAM(i, "_CHANNEL"), val) ? val : 0;
+            o->channel = AP::param()->get(VTX_CLI_PARAM(i, "_CHAN"), val) ? val : 0;
             o->power = AP::param()->get(VTX_CLI_PARAM(i, "_POWER"), val) ? val : 0;
             o->end = AP::param()->get(VTX_CLI_PARAM(i, "_END"), val) ? val : 0;
             o->rc = AP::param()->get(VTX_CLI_PARAM(i, "_RC"), val) ? val : 0;
