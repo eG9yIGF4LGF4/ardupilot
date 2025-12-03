@@ -102,11 +102,11 @@ void AP_VideoTX_CLI::set_parameters()
         
         if(rc->get_pwm(options->rc, pwm)) {
             if(options->enabled()) {
-                if(options->band != 0) vtx->set_band(options->band);
+                if(options->band != 0) vtx->set_band(options->band-1);
 
-                if(options->channel != 0) vtx->set_channel(options->channel);
+                if(options->channel != 0) vtx->set_channel(options->channel-1);
         
-                if(options->power != 0) vtx->change_power(options->power);
+                if(options->power != 0) vtx->change_power(options->power-1);
             }
         }
     }
