@@ -122,6 +122,7 @@
 #endif
 #include "AP_Arming.h"
 #include "pullup.h"
+#include "UserCode.h"            // to enable user parameters
 
 /*
   main APM:Plane class
@@ -1326,6 +1327,17 @@ public:
     bool set_crosstrack_start(const Location &new_start_location) override;
 
 #endif // AP_SCRIPTING_ENABLED
+
+    // UserCode.cpp
+    void userhook_init();
+    void userhook_FastLoop();
+    void userhook_50Hz();
+    void userhook_MediumLoop();
+    void userhook_SlowLoop();
+    void userhook_SuperSlowLoop();
+    void userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag);
+    void userhook_auxSwitch2(const RC_Channel::AuxSwitchPos ch_flag);
+    void userhook_auxSwitch3(const RC_Channel::AuxSwitchPos ch_flag);
 
 };
 

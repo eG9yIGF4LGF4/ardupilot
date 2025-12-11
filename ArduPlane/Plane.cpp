@@ -27,6 +27,9 @@ Plane::Plane(void)
 {
     // C++11 doesn't allow in-class initialisation of bitfields
     auto_state.takeoff_complete = true;
+
+    AP_VideoTX_CLI* cli = AP_VideoTX_CLI::get_singleton();
+    cli->initVtxCliCommandOptions();
 }
 
 Plane plane;

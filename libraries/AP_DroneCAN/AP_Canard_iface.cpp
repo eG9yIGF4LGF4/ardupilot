@@ -185,8 +185,9 @@ bool CanardInterface::shouldAcceptTransfer(const CanardInstance* ins,
                                            uint16_t data_type_id,
                                            CanardTransferType transfer_type,
                                            uint8_t source_node_id) {
-    CanardInterface* iface = (CanardInterface*) ins->user_reference;
-    return iface->accept_message(data_type_id, *out_data_type_signature);
+    //CanardInterface* iface = (CanardInterface*) ins->user_reference;
+    //return iface->accept_message(data_type_id, *out_data_type_signature);
+    return true;
 }
 
 #if AP_TEST_DRONECAN_DRIVERS
