@@ -5,7 +5,7 @@
 #include <AP_Vehicle/AP_Vehicle.h>
 #include <RC_Channel/RC_Channel.h>
 
-#define VTX_CLI_NUM_COMMANDS 8
+#define VTX_CLI_NUM_COMMANDS 10
 
 class VTX_CLI_Command {
 public:
@@ -23,7 +23,7 @@ public:
     }
 
     bool is_active() const {
-        if (rc_channel < 0) {
+        if (rc_channel < 1) {
             return false;
         }
         
@@ -32,12 +32,17 @@ public:
             return false;
         }
         
-        RC_Channel* ch = rc->channel((uint8_t)rc_channel.get());
+        RC_Channel* ch = rc->channel((uint8_t)rc_channel.get()-1);
         if (ch == nullptr) {
             return false;
         }
         
-        return in_range(ch->get_radio_in());
+        int16_t ri = ch->get_radio_in();
+        if(ri > 0) {
+            return in_range((uint16_t)ri);
+        }
+
+        return false;
     }
 
     bool is_configured() const {
@@ -52,11 +57,6 @@ class AP_VideoTX_CLI
 
         CLASS_NO_COPY(AP_VideoTX_CLI);
 
-        // bool initVtxCliCommandOptions();
-        // void set_parameters();
-        // VTX_CLI_COMMAND_OPTIONS* getVtxCliCommandOptions();
-        // VTX_CLI_COMMAND_OPTIONS* getVtxCliCommandOptionsAll();
-        
         static const struct AP_Param::GroupInfo var_info[];
 
         static AP_VideoTX_CLI* _singleton;
@@ -69,39 +69,5 @@ class AP_VideoTX_CLI
 
         void handle_commands();
     private:
-        // VTX_CLI_COMMAND_OPTIONS* vtxCliOptions;
-        // VTX_CLI_COMMAND_OPTIONS* vtxCliOptionsDefault;
         bool vtxCliOptionsInitialized;
 };
-
-
-
-// #define VTX_CLI_COMMANDS_COUNT 8
-// #define VTX_CLI_ROW(i) "VTX_CLI"#i
-// #define VTX_CLI_PARAM(i, suffix) VTX_CLI_ROW(i)#suffix
-// typedef struct __attribute__((__packed__))
-// {
-//     uint8_t rc;
-//     uint8_t begin;
-//     uint8_t band;
-//     uint8_t channel;
-//     uint8_t power;
-//     uint8_t end;
-
-//     bool enabled(uint16_t pwm)
-//     {    
-//         return this->begin >= pwm || this->end <= pwm;
-//     }
-
-//     bool enabled()
-//     {    
-//         uint16_t val;
-
-//         if(RC_Channels::get_singleton()->get_pwm(this->rc, val)) {
-//             return enabled(val);
-//         }
-        
-//         return false;
-//     }
-    
-// } VTX_CLI_COMMAND_OPTIONS;

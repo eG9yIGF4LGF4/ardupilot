@@ -81,6 +81,15 @@ const AP_Param::GroupInfo AP_VideoTX_CLI::var_info[] = {
     // @Path: AP_VideoTX_CLI.cpp
     AP_SUBGROUPINFO(commands[7], "V7_", 8, AP_VideoTX_CLI, VTX_CLI_Command),
 
+    // @Group: 8_
+    // @Path: AP_VideoTX_CLI.cpp
+    AP_SUBGROUPINFO(commands[8], "V8_", 9, AP_VideoTX_CLI, VTX_CLI_Command),
+
+
+    // @Group: 9_
+    // @Path: AP_VideoTX_CLI.cpp
+    AP_SUBGROUPINFO(commands[9], "V9_", 10, AP_VideoTX_CLI, VTX_CLI_Command),
+
     AP_GROUPEND
 };
 
@@ -99,7 +108,7 @@ AP_VideoTX_CLI::AP_VideoTX_CLI(/* args */)
 
 void AP_VideoTX_CLI::handle_commands()
 {
-    //GCS_SEND_TEXT(MAV_SEVERITY_INFO, "AP_VideoTX_CLI::set_parameters() begin");
+    GCS_SEND_TEXT(MAV_SEVERITY_DEBUG, "VTX_CLI begin");
     
     AP_VideoTX* vtx = AP_VideoTX::get_singleton();
     RC_Channels* rc = RC_Channels::get_singleton();
@@ -109,15 +118,17 @@ void AP_VideoTX_CLI::handle_commands()
         auto cmd = &commands[i];
         
         if(rc->get_pwm(cmd->rc_channel, pwm)) {
-            if(cmd->is_active() && cmd->is_configured()) {
+            if(cmd->is_configured() && cmd->is_active()) {
                 if(cmd->band != 0) vtx->set_band(cmd->band-1);
 
                 if(cmd->channel != 0) vtx->set_channel(cmd->channel-1);
         
                 if(cmd->power != 0) vtx->change_power(cmd->power-1);
+
+                GCS_SEND_TEXT(MAV_SEVERITY_DEBUG, "VTX_CLI iteration %d: rc_channel=%d band=%d pwr=%d", i, cmd->rc_channel.get(), cmd->band.get(), cmd->power.get());
             }
         }
     }
 
-    //GCS_SEND_TEXT(MAV_SEVERITY_INFO, "AP_VideoTX_CLI::set_parameters() end");
+    GCS_SEND_TEXT(MAV_SEVERITY_DEBUG, "VTX_CLI end");
 }

@@ -1,7 +1,7 @@
 #include "Plane.h"
 
 #include <AP_Gripper/AP_Gripper.h>
-#include <AP_Param.h>
+#include <AP_Param/AP_Param.h>
 
 /*
  *  ArduPlane parameter definitions

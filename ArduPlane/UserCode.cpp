@@ -4,8 +4,6 @@
 #ifdef USERHOOK_INIT
 void Plane::userhook_init()
 {
-    AP_VideoTX_CLI* cli = AP_VideoTX_CLI::get_singleton();
-    cli->initVtxCliCommandOptions();    
 }
 #endif
 
@@ -48,10 +46,12 @@ void Plane::userhook_SuperSlowLoop()
 
 void Plane::userhook_auxSwitch1(const RC_Channel::AuxSwitchPos ch_flag) 
 {
+    int a = 0;
+    if(a < 0) return;
     #if AP_VTX_CLI_ENABLED
 
     auto cli = AP_VideoTX_CLI::get_singleton();
-    cli->set_parameters();
+    cli->handle_commands();
 
     #endif
 }

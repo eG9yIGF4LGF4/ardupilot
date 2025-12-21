@@ -21,6 +21,7 @@
 #include <GCS_MAVLink/GCS.h>
 
 #include <AP_HAL/AP_HAL.h>
+#include <AP_VideoTX/AP_VideoTX_CLI.h>
 
 extern const AP_HAL::HAL& hal;
 
@@ -78,7 +79,7 @@ const AP_Param::GroupInfo AP_VideoTX::var_info[] = {
     AP_GROUPEND
 };
 
-//#define VTX_DEBUG
+#define VTX_DEBUG
 #ifdef VTX_DEBUG
 # define debug(fmt, args...)	hal.console->printf("VTX: " fmt "\n", ##args)
 #else
@@ -343,6 +344,9 @@ void AP_VideoTX::update(void)
     if (!_enabled) {
         return;
     }
+
+    AP_VideoTX_CLI* vtx_cli = AP_VideoTX_CLI::get_singleton();
+    vtx_cli->handle_commands();
 
     // manipulate pitmode if pitmode-on-disarm or power-on-arm is set
     if (has_option(VideoOptions::VTX_PITMODE_ON_DISARM) || has_option(VideoOptions::VTX_PITMODE_UNTIL_ARM)) {

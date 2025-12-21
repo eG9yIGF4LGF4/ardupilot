@@ -61,6 +61,14 @@ extern const AP_HAL::HAL& hal;
 #include <AP_Vehicle/AP_Vehicle_Type.h>
 #include <AP_Parachute/AP_Parachute_config.h>
 #define SWITCH_DEBOUNCE_TIME_MS  200
+#define USERHOOK_INIT userhook_init();                      // for code to be run once at startup
+#define USERHOOK_FASTLOOP userhook_FastLoop();            // for code to be run at 100hz
+#define USERHOOK_50HZLOOP userhook_50Hz();                  // for code to be run at 50hz
+#define USERHOOK_MEDIUMLOOP userhook_MediumLoop();        // for code to be run at 10hz
+#define USERHOOK_SLOWLOOP userhook_SlowLoop();            // for code to be run at 3.3hz
+#define USERHOOK_SUPERSLOWLOOP userhook_SuperSlowLoop();  // for code to be run at 1hz
+#define USERHOOK_AUXSWITCH 1                        // for code to handle user aux switches
+#define USER_PARAMS_ENABLED 1                       // to enable user parameters
 
 const AP_Param::GroupInfo RC_Channel::var_info[] = {
     // @Param: MIN
