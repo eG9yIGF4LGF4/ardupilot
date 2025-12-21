@@ -86,7 +86,7 @@
 #if AP_EXTERNAL_CONTROL_ENABLED
 #include "AP_ExternalControl_Plane.h"
 #endif
-
+#include <AP_VideoTX/AP_VideoTX_CLI.h>
 #include <AC_PrecLand/AC_PrecLand_config.h>
 #if AC_PRECLAND_ENABLED
  # include <AC_PrecLand/AC_PrecLand.h>
@@ -335,6 +335,8 @@ private:
     AP_Quicktune quicktune;
 #endif
     
+    AP_VideoTX_CLI video_tx_cli;
+
     // This is the state of the flight control system
     // There are multiple states defined such as MANUAL, FBW-A, AUTO
     Mode *control_mode = &mode_initializing;
